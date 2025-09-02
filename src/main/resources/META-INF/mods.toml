@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+issueTrackerURL="https://github.com/RavenholmZombie/RZCraft-Additions/issues"
+
+[[mods]]
+modId="rzadditions"
+version="1.0.0"
+displayName="RZCraft Additions"
+authors="RavenholmZombie"
+description='''
+Adds various useful items and blocks to the RZCraft server.
+'''
