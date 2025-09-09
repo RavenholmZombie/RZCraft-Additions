@@ -22,6 +22,12 @@ public class ModItems
                     .saturationMod(0.3f)
                     .build())));
 
+    public static final RegistryObject<Item> SOY_MASH = ITEMS.register("soy_mash",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)       // hunger restored
+                    .saturationMod(0.3f)
+                    .build())));
+
     public static final RegistryObject<Item> SOYBEANS = ITEMS.register("soybeans",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(), new Item.Properties()));
 

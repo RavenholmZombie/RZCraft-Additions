@@ -2,22 +2,22 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "item": "rzadditions:soybeans"
+      "item": "rzadditions:soy_mash"
     },
     {
-      "item": "rzadditions:soybeans"
+      "item": "rzadditions:soy_mash"
     },
     {
-      "item": "rzadditions:soybeans"
+      "item": "rzadditions:soy_mash"
     },
     {
-      "item": "rzadditions:soybeans"
+      "item": "rzadditions:soy_mash"
     }
   ],
   "results": [
     {
       "item": "rzadditions:tofu",
-      "count": 1
+      "count": 2
     }
   ],
   "heatRequirement": "heated"

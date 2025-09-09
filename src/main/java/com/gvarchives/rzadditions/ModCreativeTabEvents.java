@@ -19,6 +19,7 @@ public class ModCreativeTabEvents
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
         {
             event.accept(ModItems.TOFU);
+            event.accept(ModItems.SOY_MASH);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
