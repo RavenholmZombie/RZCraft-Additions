@@ -1,0 +1,24 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "rzadditions:soybeans"
+    },
+    {
+      "item": "rzadditions:soybeans"
+    },
+    {
+      "item": "rzadditions:soybeans"
+    },
+    {
+      "item": "rzadditions:soybeans"
+    }
+  ],
+  "results": [
+    {
+      "item": "rzadditions:tofu",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

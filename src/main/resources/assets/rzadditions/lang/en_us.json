@@ -1,3 +1,5 @@
 {
-  "item.rzadditions.tofu": "Raw Tofu"
+  "item.rzadditions.tofu": "Raw Tofu",
+  "item.rzadditions.soybeans": "Soybeans",
+  "tooltip.rzadditions.tag_tooltip.hold_shift": "Hold SHIFT for tags"
 }

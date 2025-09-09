@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rzadditions:item/tofu"
+    "layer0": "rzadditions:item/soybeans"
   }
 }

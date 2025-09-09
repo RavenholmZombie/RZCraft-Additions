@@ -4,6 +4,7 @@ import com.gvarchives.rzadditions.RZAdditions;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,10 +22,14 @@ public class ModItems
                     .saturationMod(0.3f)
                     .build())));
 
-//    public static RegistryObject<Item> registerBlockItem(String name, RegistryObject<? extends Item> block)
-//    {
-//        return ITEMS.register(name, () -> new BlockItem((Block) block.get(), new Item.Properties()));
-//    }
+    public static final RegistryObject<Item> SOYBEANS = ITEMS.register("soybeans",
+            () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(), new Item.Properties()));
+
+
+    public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block)
+    {
+        return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
 
     public static void register(IEventBus eventBus)
     {

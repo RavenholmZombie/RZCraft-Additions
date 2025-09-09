@@ -20,5 +20,10 @@ public class ModCreativeTabEvents
         {
             event.accept(ModItems.TOFU);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
+        {
+            event.accept(ModItems.SOYBEANS);
+        }
     }
 }

@@ -9,7 +9,8 @@ public class ModTags
 {
     public static class Items
     {
-        public static final TagKey<Item> MEATS =
-                ItemTags.create(new ResourceLocation("forge", "meats"));
+        public static final TagKey<Item> RAW_MEAT = ItemTags.create(new ResourceLocation("forge", "raw_meats"));
+        public static final TagKey<Item> SEEDS = ItemTags.create(new ResourceLocation("forge", "seeds"));
+
     }
 }

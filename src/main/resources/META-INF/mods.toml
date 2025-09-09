@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[47,)"
-license="MIT"
+license="MIT LICENSE"
 issueTrackerURL="https://github.com/RavenholmZombie/RZCraft-Additions/issues"
 
 [[mods]]
@@ -11,3 +11,24 @@ authors="RavenholmZombie"
 description='''
 Adds various useful items and blocks to the RZCraft server.
 '''
+
+[[dependencies.rzadditions]]
+modId="forge"
+mandatory=true
+versionRange="[0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.rzadditions]]
+modId="flywheel"
+mandatory=true
+versionRange="[0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.rzadditions]]
+modId="create"
+mandatory=true
+versionRange="[0.5.1.e,)"
+ordering="NONE"
+side="BOTH"
