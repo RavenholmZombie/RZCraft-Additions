@@ -1,10 +1,8 @@
-package com.gvarchives.rzadditions;
+package com.gvarchives.rzadditions.events;
 
+import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.core.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,6 +23,11 @@ public class ModCreativeTabEvents
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
         {
             event.accept(ModItems.SOYBEANS);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            //event.accept(ModItems.LEVITATION_WAND);
         }
     }
 }

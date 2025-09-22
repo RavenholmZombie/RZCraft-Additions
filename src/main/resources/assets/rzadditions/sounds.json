@@ -1,0 +1,12 @@
+{
+  "player_join": {
+    "sounds": [
+      { "name": "rzadditions:player_join" }
+    ]
+  },
+  "player_leave": {
+    "sounds": [
+      { "name": "rzadditions:player_leave" }
+    ]
+  }
+}

@@ -1,7 +1,9 @@
 package com.gvarchives.rzadditions;
 
+import com.gvarchives.rzadditions.core.CommonConfig;
 import com.gvarchives.rzadditions.core.ModBlocks;
 import com.gvarchives.rzadditions.core.ModItems;
+import com.gvarchives.rzadditions.core.ModSounds;
 import com.gvarchives.rzadditions.feature.tagtooltips.TagTooltipConfig;
 import net.minecraft.client.KeyMapping;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,8 +23,10 @@ public class RZAdditions
     public RZAdditions()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.SOUNDS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(
                 ModConfig.Type.CLIENT,

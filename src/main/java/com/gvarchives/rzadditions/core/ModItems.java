@@ -1,6 +1,7 @@
 package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.content.item.LevitationWandItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -30,6 +31,9 @@ public class ModItems
 
     public static final RegistryObject<Item> SOYBEANS = ITEMS.register("soybeans",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> LEVITATION_WAND = ITEMS.register("levitation_wand",
+            () -> new LevitationWandItem(new Item.Properties().stacksTo(1).durability(250)));
 
 
     public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block)

@@ -1,5 +1,6 @@
-package com.gvarchives.rzadditions;
+package com.gvarchives.rzadditions.feature.tagtooltips;
 
+import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.core.ModItems;
 import com.gvarchives.rzadditions.core.ModTags;
 import net.minecraft.core.registries.Registries;
