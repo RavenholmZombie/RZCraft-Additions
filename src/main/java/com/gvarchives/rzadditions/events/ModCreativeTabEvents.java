@@ -24,10 +24,5 @@ public class ModCreativeTabEvents
         {
             event.accept(ModItems.SOYBEANS);
         }
-
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
-        {
-            //event.accept(ModItems.LEVITATION_WAND);
-        }
     }
 }

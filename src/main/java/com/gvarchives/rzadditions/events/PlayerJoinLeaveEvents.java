@@ -1,10 +1,9 @@
 package com.gvarchives.rzadditions.events;
 
 import com.gvarchives.rzadditions.RZAdditions;
-import com.gvarchives.rzadditions.core.CommonConfig;
+import com.gvarchives.rzadditions.core.ModGamerules;
 import com.gvarchives.rzadditions.core.ModSounds;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,7 +14,7 @@ public class PlayerJoinLeaveEvents
 {
     private static void playGlobalSound(ServerPlayer sourcePlayer, boolean joining)
     {
-        if (!CommonConfig.ENABLE_JOIN_LEAVE_SOUNDS.get())
+        if (!sourcePlayer.level().getGameRules().getBoolean(ModGamerules.JOIN_LEAVE_SOUNDS))
         {
             return;
         }

@@ -1,15 +1,13 @@
 package com.gvarchives.rzadditions;
 
-import com.gvarchives.rzadditions.core.CommonConfig;
-import com.gvarchives.rzadditions.core.ModBlocks;
-import com.gvarchives.rzadditions.core.ModItems;
-import com.gvarchives.rzadditions.core.ModSounds;
+import com.gvarchives.rzadditions.core.*;
 import com.gvarchives.rzadditions.feature.tagtooltips.TagTooltipConfig;
-import net.minecraft.client.KeyMapping;
+import net.minecraft.world.level.GameRules;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +21,7 @@ public class RZAdditions
     public RZAdditions()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.SOUNDS.register(modEventBus);
@@ -32,5 +30,19 @@ public class RZAdditions
                 ModConfig.Type.CLIENT,
                 TagTooltipConfig.CLIENT_SPEC
         );
+        modEventBus.addListener(this::commonSetup);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+        event.enqueueWork(() ->
+        {
+            ModGamerules.JOIN_LEAVE_SOUNDS = GameRules.register(
+                    "playJoinAndLeaveSounds",
+                    GameRules.Category.PLAYER,
+                    GameRules.BooleanValue.create(true)
+            );
+            LOGGER.info("Registered gamerule: playJoinAndLeaveSounds");
+        });
     }
 }
