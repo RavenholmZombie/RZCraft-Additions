@@ -1,6 +1,6 @@
 package com.gvarchives.rzadditions.events;
 
-import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.core.ModGamerules;
 import com.gvarchives.rzadditions.core.ModSounds;
 import net.minecraft.server.level.ServerPlayer;
@@ -9,7 +9,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RZAdditions.MOD_ID)
+@Mod.EventBusSubscriber(modid = Main.MOD_ID)
 public class PlayerJoinLeaveEvents
 {
     private static void playGlobalSound(ServerPlayer sourcePlayer, boolean joining)

@@ -1,6 +1,6 @@
 package com.gvarchives.rzadditions.feature.tagtooltips;
 
-import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.Main;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -20,7 +20,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-@Mod.EventBusSubscriber(modid = RZAdditions.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = Main.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TagTooltipHandler
 {
     @SubscribeEvent

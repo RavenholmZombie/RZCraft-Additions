@@ -1,6 +1,6 @@
 package com.gvarchives.rzadditions.events;
 
-import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.core.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -8,7 +8,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RZAdditions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class CreativeTabEvents
 {
     @SubscribeEvent

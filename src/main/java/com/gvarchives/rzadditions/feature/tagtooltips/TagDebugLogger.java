@@ -1,6 +1,6 @@
 package com.gvarchives.rzadditions.feature.tagtooltips;
 
-import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.core.ModItems;
 import com.gvarchives.rzadditions.core.ModTags;
 import net.minecraft.core.registries.Registries;
@@ -9,7 +9,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RZAdditions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TagDebugLogger
 {
     @SubscribeEvent
@@ -22,21 +22,21 @@ public class TagDebugLogger
         boolean isRawMeat = tofu.builtInRegistryHolder().is(ModTags.Items.RAW_MEAT);
         boolean isSeed = soybeans.builtInRegistryHolder().is(ModTags.Items.SEEDS);
 
-        RZAdditions.LOGGER.info("=== RZCraft Additions Patent-Pending Tag Debuginator! ===");
-        RZAdditions.LOGGER.info("Is Tofu in forge:raw_meat? -> " + isRawMeat);
-        RZAdditions.LOGGER.info("Are Soybeans in forge:seeds? -> " + isSeed);
+        Main.LOGGER.info("=== RZCraft Additions Patent-Pending Tag Debuginator! ===");
+        Main.LOGGER.info("Is Tofu in forge:raw_meat? -> " + isRawMeat);
+        Main.LOGGER.info("Are Soybeans in forge:seeds? -> " + isSeed);
 
         var tagMeats = server.registryAccess().registryOrThrow(Registries.ITEM)
                 .getTagOrEmpty(ModTags.Items.RAW_MEAT);
         var tagSeeds = server.registryAccess().registryOrThrow(Registries.ITEM)
                 .getTagOrEmpty(ModTags.Items.SEEDS);
 
-        RZAdditions.LOGGER.info("Items in #forge:raw_meat:");
-        tagMeats.forEach(holder -> RZAdditions.LOGGER.info(" - " + holder.value().toString()));
+        Main.LOGGER.info("Items in #forge:raw_meat:");
+        tagMeats.forEach(holder -> Main.LOGGER.info(" - " + holder.value().toString()));
 
-        RZAdditions.LOGGER.info("Items in #forge:seeds:");
-        tagSeeds.forEach(holder -> RZAdditions.LOGGER.info(" - " + holder.value().toString()));
+        Main.LOGGER.info("Items in #forge:seeds:");
+        tagSeeds.forEach(holder -> Main.LOGGER.info(" - " + holder.value().toString()));
 
-        RZAdditions.LOGGER.info("==================");
+        Main.LOGGER.info("==================");
     }
 }

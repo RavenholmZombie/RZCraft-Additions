@@ -1,6 +1,6 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.RZAdditions;
+import com.gvarchives.rzadditions.Main;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModItems
 {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RZAdditions.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
 
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
