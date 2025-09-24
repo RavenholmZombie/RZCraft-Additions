@@ -6,11 +6,12 @@ issueTrackerURL="https://github.com/RavenholmZombie/RZCraft-Additions/issues"
 [[mods]]
 modId="rzadditions"
 version="1.0.0"
-displayName="RZCraft Additions"
+displayName="RZ's Additions"
 authors="RavenholmZombie"
 description='''
-Adds various useful items and blocks to the RZCraft server.
+A simple mod that adds simple stuff.
 '''
+logoFile="rza.png"
 
 [[dependencies.rzadditions]]
 modId="forge"
