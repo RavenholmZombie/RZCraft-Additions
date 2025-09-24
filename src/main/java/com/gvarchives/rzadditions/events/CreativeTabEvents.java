@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = RZAdditions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ModCreativeTabEvents
+public class CreativeTabEvents
 {
     @SubscribeEvent
     public static void onBuildCreativeTab(BuildCreativeModeTabContentsEvent event)
