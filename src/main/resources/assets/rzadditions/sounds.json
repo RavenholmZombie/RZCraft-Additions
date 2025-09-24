@@ -8,5 +8,10 @@
     "sounds": [
       { "name": "rzadditions:player_leave" }
     ]
+  },
+  "duck": {
+    "sounds": [
+      { "name": "rzadditions:duck" }
+    ]
   }
 }

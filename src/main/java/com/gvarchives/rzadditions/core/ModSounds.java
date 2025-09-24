@@ -17,4 +17,6 @@ public class ModSounds
             SOUNDS.register("player_join", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Main.MOD_ID, "player_join")));
     public static final RegistryObject<SoundEvent> PLAYER_LEAVE =
             SOUNDS.register("player_leave", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Main.MOD_ID, "player_leave")));
+    public static final RegistryObject<SoundEvent> DUCK =
+            SOUNDS.register("duck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Main.MOD_ID, "duck")));
 }

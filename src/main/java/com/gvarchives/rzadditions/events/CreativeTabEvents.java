@@ -24,5 +24,10 @@ public class CreativeTabEvents
         {
             event.accept(ModItems.SOYBEANS);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.RUBBER_DUCK);
+        }
     }
 }

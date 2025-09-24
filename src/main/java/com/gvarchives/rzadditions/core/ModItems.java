@@ -1,6 +1,7 @@
 package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
+import com.gvarchives.rzadditions.content.item.RubberDuck;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,9 @@ public class ModItems
 
     public static final RegistryObject<Item> SOYBEANS = ITEMS.register("soybeans",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> RUBBER_DUCK = ITEMS.register("rubber_duck",
+            () -> new RubberDuck(new Item.Properties().stacksTo(1)));
 
 
     public static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block)
