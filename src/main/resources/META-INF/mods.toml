@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/RavenholmZombie/RZCraft-Additions/issues"
 
 [[mods]]
 modId="rzadditions"
-version="1.0.1"
+version="1.0.2"
 displayName="RZ's Additions"
 authors="RavenholmZombie"
 description='''
@@ -31,5 +31,19 @@ side="BOTH"
 modId="create"
 mandatory=true
 versionRange="[0.5.1.e,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.rzadditions]]
+modId="resourcefullib"
+mandatory=true
+versionRange="[2.1.29,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.rzadditions]]
+modId="botarium"
+mandatory=true
+versionRange="[2.3.4,)"
 ordering="NONE"
 side="BOTH"

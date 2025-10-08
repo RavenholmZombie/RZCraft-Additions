@@ -1,12 +1,9 @@
 package com.gvarchives.rzadditions;
 
 import com.gvarchives.rzadditions.core.*;
-import com.gvarchives.rzadditions.feature.tagtooltips.TagTooltipConfig;
 import net.minecraft.world.level.GameRules;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -22,14 +19,13 @@ public class Main
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
         ModSounds.SOUNDS.register(modEventBus);
+        ModBlocks.BLOCKS.init();
+        ModItems.ITEMS.init();
 
-        ModLoadingContext.get().registerConfig(
-                ModConfig.Type.CLIENT,
-                TagTooltipConfig.CLIENT_SPEC
-        );
+        ModFluidProperties.FLUID_PROPERTIES.initialize();
+        ModFluids.FLUIDS.init();
+
         modEventBus.addListener(this::commonSetup);
     }
 

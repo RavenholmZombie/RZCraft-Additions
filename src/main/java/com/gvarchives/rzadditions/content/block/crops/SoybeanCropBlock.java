@@ -1,5 +1,6 @@
-package com.gvarchives.rzadditions.content.block;
+package com.gvarchives.rzadditions.content.block.crops;
 
+import com.gvarchives.rzadditions.core.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -10,13 +11,12 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.PlantType;
-import com.gvarchives.rzadditions.core.ModItems;
 
 public class SoybeanCropBlock extends CropBlock
 {
-    public SoybeanCropBlock()
+    public SoybeanCropBlock(BlockBehaviour.Properties properties)
     {
-        super(BlockBehaviour.Properties.copy(Blocks.WHEAT));
+        super(properties);
     }
 
     @Override

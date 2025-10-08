@@ -1,26 +1,22 @@
 package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
-import com.gvarchives.rzadditions.content.block.SoybeanCropBlock;
+import com.gvarchives.rzadditions.content.block.crops.SoybeanCropBlock;
+import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
+import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
+import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
+import earth.terrarium.botarium.common.registry.fluid.BotariumLiquidBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 
 public class ModBlocks
 {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
+    public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, Main.MOD_ID);
 
-    public static final RegistryObject<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop",
-            () -> new SoybeanCropBlock());
+    public static final RegistryEntry<Block> SOY_MILK = BLOCKS.register("soy_milk", () -> new BotariumLiquidBlock(ModFluidProperties.SOY_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
 
-
-    public static void register(IEventBus eventBus)
-    {
-        BLOCKS.register(eventBus);
-
-        // Future resting place for BlockItem registrations.
-        // E.g.: ModItems.registerBlockItem("id", OBJECT);
-    }
+    public static final RegistryEntry<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop", () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 }

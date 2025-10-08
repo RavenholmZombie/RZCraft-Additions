@@ -16,5 +16,6 @@ public class ClientSetup
     public static void onClientSetup(FMLClientSetupEvent event)
     {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOYBEAN_CROP.get(), RenderType.cutout());
+        Main.LOGGER.info("Client Setup Completed.");
     }
 }

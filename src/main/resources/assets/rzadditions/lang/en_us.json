@@ -4,5 +4,9 @@
   "tooltip.rzadditions.tag_tooltip.hold_shift": "Hold SHIFT for tags",
   "item.rzadditions.soy_mash": "Soy Mash",
   "item.rzadditions.levitation_wand": "Gravity Wand",
-  "item.rzadditions.rubber_duck": "Rubber Duck"
+  "item.rzadditions.rubber_duck": "Rubber Duck",
+  "fluid.rzadditions.soy_milk": "Soy Milk",
+  "item.rzadditions.soy_milk_bucket": "Soy Milk Bucket",
+  "block.rzadditions.soy_milk": "Soy Milk",
+  "block.rzadditions.soy_milk_block": "Soy Milk"
 }

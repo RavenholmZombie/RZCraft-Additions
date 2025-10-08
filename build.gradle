@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
-version = "1.0.1"
+version = "1.0.2"
 group = "com.gvarchives.rzadditions"
 archivesBaseName = "RZCraft-Additions"
 
@@ -68,6 +68,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        name = "ResourcefulBees - Botarium/ResourcefulLib"
+        url = "https://maven.resourcefulbees.com/repository/maven-public/"
+    }
 
     maven { url "https://cursemaven.com/" }
 }
@@ -80,6 +84,9 @@ dependencies {
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
+    compileOnly fg.deobf("earth.terrarium.botarium:botarium-forge-1.20.1:2.3.4")
+    runtimeOnly fg.deobf("earth.terrarium.botarium:botarium-forge-1.20.1:2.3.4")
+    implementation fg.deobf("com.teamresourceful.resourcefullib:resourcefullib-forge-1.20.1:2.1.29")
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
@@ -89,7 +96,6 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:jade-324717:6855440")
     runtimeOnly fg.deobf("curse.maven:in-game-account-switcher-232676:5457030")
     runtimeOnly fg.deobf("curse.maven:create-new-age-905861:5080957")
-    runtimeOnly fg.deobf("curse.maven:botarium-704113:5486070")
 }
 
 jar {
