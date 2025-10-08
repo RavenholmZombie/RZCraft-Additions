@@ -8,5 +8,6 @@
   "fluid.rzadditions.soy_milk": "Soy Milk",
   "item.rzadditions.soy_milk_bucket": "Soy Milk Bucket",
   "block.rzadditions.soy_milk": "Soy Milk",
-  "block.rzadditions.soy_milk_block": "Soy Milk"
+  "block.rzadditions.soy_milk_block": "Soy Milk",
+  "fluid_type.rzadditions.soy_milk": "Soy Milk"
 }

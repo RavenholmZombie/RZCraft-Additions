@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    { "item": "rzadditions:soy_mash" },
+    { "item": "rzadditions:soy_mash" },
+    { "item": "rzadditions:soy_mash" },
+    { "item": "rzadditions:soy_mash" },
+    { "item": "rzadditions:soy_mash" },
+    { "item": "rzadditions:soy_mash" },
+    { "fluid": "minecraft:water", "amount": 1000 }
+  ],
+  "results": [
+    { "fluid": "rzadditions:soy_milk", "amount": 1000 }
+  ],
+  "heatRequirement": "heated"
+}
