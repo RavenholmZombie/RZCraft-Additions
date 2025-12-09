@@ -15,4 +15,7 @@ public class ModFluids
 
     public static final RegistryEntry<Fluid> SOY_MILK = FLUIDS.register("soy_milk", () -> new BotariumSourceFluid(ModFluidProperties.SOY_MILK));
     public static final RegistryEntry<Fluid> FLOWING_SOY_MILK = FLUIDS.register("flowing_soy_milk", () -> new BotariumFlowingFluid(ModFluidProperties.SOY_MILK));
+
+    public static final RegistryEntry<Fluid> SIMPLE_SYRUP = FLUIDS.register("simple_syrup", () -> new BotariumSourceFluid(ModFluidProperties.SIMPLE_SYRUP));
+    public static final RegistryEntry<Fluid> FLOWING_SIMPLE_SYRUP = FLUIDS.register("flowing_simple_syrup", () -> new BotariumFlowingFluid(ModFluidProperties.SIMPLE_SYRUP));
 }

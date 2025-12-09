@@ -44,4 +44,9 @@ public class ModItems
             ModFluidProperties.SOY_MILK,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
     );
+
+    public static final RegistryEntry<Item> SIMPLE_SYRUP_BUCKET = ITEMS.register("simple_syrup_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.SIMPLE_SYRUP,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
 }

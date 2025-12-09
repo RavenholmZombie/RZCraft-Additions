@@ -19,6 +19,7 @@ public class CreativeTabEvents
             event.accept(ModItems.TOFU);
             event.accept(ModItems.SOY_MASH);
             event.accept(ModItems.SOY_MILK_BUCKET);
+            event.accept(ModItems.SIMPLE_SYRUP_BUCKET);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)

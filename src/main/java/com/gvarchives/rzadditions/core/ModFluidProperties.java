@@ -17,4 +17,11 @@ public class ModFluidProperties
             .viscosity(2000)
             .density(2000)
             .canConvertToSource(false));
+
+    public static final FluidData SIMPLE_SYRUP = FLUID_PROPERTIES.register("simple_syrup", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/simple_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/simple_flow"))
+            .viscosity(2500)
+            .density(2500)
+            .canConvertToSource(false));
 }

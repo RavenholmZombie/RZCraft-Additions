@@ -17,6 +17,7 @@ public class ModBlocks
     public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, Main.MOD_ID);
 
     public static final RegistryEntry<Block> SOY_MILK = BLOCKS.register("soy_milk", () -> new BotariumLiquidBlock(ModFluidProperties.SOY_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final RegistryEntry<Block> SIMPLE_SYRUP = BLOCKS.register("simple_syrup", () -> new BotariumLiquidBlock(ModFluidProperties.SIMPLE_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
 
     public static final RegistryEntry<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop", () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 }
