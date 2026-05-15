@@ -13,5 +13,21 @@
   "fluid_type.rzadditions.soy_milk": "Soy Milk",
   "fluid_type.rzadditions.simple_syrup": "Simple Syrup",
   "block.rzadditions.simple_syrup": "Simple Syrup",
-  "block.rzadditions.simple_syrup_block": "Simple Syrup"
+  "block.rzadditions.simple_syrup_block": "Simple Syrup",
+  "block.rzadditions.white_sheetmetal": "White Sheetmetal",
+  "block.rzadditions.orange_sheetmetal": "Orange Sheetmetal",
+  "block.rzadditions.magenta_sheetmetal": "Magenta Sheetmetal",
+  "block.rzadditions.lime_sheetmetal": "Lime Sheetmetal",
+  "block.rzadditions.yellow_sheetmetal": "Yellow Sheetmetal",
+  "block.rzadditions.pink_sheetmetal": "Pink Sheetmetal",
+  "block.rzadditions.light_gray_sheetmetal": "Light Gray Sheetmetal",
+  "block.rzadditions.gray_sheetmetal": "Gray Sheetmetal",
+  "block.rzadditions.cyan_sheetmetal": "Cyan Sheetmetal",
+  "block.rzadditions.light_blue_sheetmetal": "Light Blue Sheetmetal",
+  "block.rzadditions.green_sheetmetal": "Green Sheetmetal",
+  "block.rzadditions.red_sheetmetal": "Red Sheetmetal",
+  "block.rzadditions.brown_sheetmetal": "Brown Sheetmetal",
+  "block.rzadditions.black_sheetmetal": "Black Sheetmetal",
+  "block.rzadditions.purple_sheetmetal": "Purple Sheetmetal",
+  "block.rzadditions.blue_sheetmetal": "Blue Sheetmetal"
 }
