@@ -4,10 +4,14 @@ import com.gvarchives.rzadditions.core.ModSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
 
 public class RubberDuck extends Item
 {
@@ -33,5 +37,17 @@ public class RubberDuck extends Item
             );
         }
         return InteractionResultHolder.success(player.getItemInHand(hand));
+    }
+
+    @Override
+    public boolean canEquip(ItemStack stack, EquipmentSlot slot, Entity entity)
+    {
+        return slot == EquipmentSlot.HEAD;
+    }
+
+    @Override
+    public EquipmentSlot getEquipmentSlot(ItemStack stack)
+    {
+        return EquipmentSlot.HEAD;
     }
 }
