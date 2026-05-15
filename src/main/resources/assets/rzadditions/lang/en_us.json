@@ -14,7 +14,7 @@
   "fluid_type.rzadditions.simple_syrup": "Simple Syrup",
   "block.rzadditions.simple_syrup": "Simple Syrup",
   "block.rzadditions.simple_syrup_block": "Simple Syrup",
-  "block.rzadditions.white_sheetmetal": "White Sheetmetal",
+  "block.rzadditions.white_sheetmetal": "Sheetmetal",
   "block.rzadditions.orange_sheetmetal": "Orange Sheetmetal",
   "block.rzadditions.magenta_sheetmetal": "Magenta Sheetmetal",
   "block.rzadditions.lime_sheetmetal": "Lime Sheetmetal",
@@ -29,5 +29,9 @@
   "block.rzadditions.brown_sheetmetal": "Brown Sheetmetal",
   "block.rzadditions.black_sheetmetal": "Black Sheetmetal",
   "block.rzadditions.purple_sheetmetal": "Purple Sheetmetal",
-  "block.rzadditions.blue_sheetmetal": "Blue Sheetmetal"
+  "block.rzadditions.blue_sheetmetal": "Blue Sheetmetal",
+  "rzadditions.ponder.sheetmetal_dyeing.header": "Dyeing Sheetmetal",
+  "rzadditions.ponder.sheetmetal_dyeing.text_1": "Sheetmetal blocks can be recolored directly in-world.",
+  "rzadditions.ponder.sheetmetal_dyeing.text_2": "Right-click with a dye to lather on a new color.",
+  "rzadditions.ponder.sheetmetal_dyeing.text_3": "The block is swapped to the matching sheetmetal color."
 }

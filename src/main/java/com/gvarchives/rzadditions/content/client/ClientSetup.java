@@ -2,6 +2,8 @@ package com.gvarchives.rzadditions.content.client;
 
 import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.core.ModBlocks;
+
+import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -12,10 +14,19 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientSetup
 {
+    private static boolean ponderRegistered = false;
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event)
     {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOYBEAN_CROP.get(), RenderType.cutout());
         Main.LOGGER.info("Client Setup Completed.");
+
+        if (!ponderRegistered)
+        {
+            PonderIndex.addPlugin(new RZPonderPlugin());
+            ponderRegistered = true;
+            Main.LOGGER.info("Registered RZAdditions Ponder plugin through PonderIndex.");
+        }
     }
 }

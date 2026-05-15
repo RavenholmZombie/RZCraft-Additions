@@ -23,16 +23,24 @@ side="BOTH"
 [[dependencies.rzadditions]]
 modId="flywheel"
 mandatory=true
-versionRange="[0,)"
+versionRange="[1.0.5,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.rzadditions]]
 modId="create"
 mandatory=true
-versionRange="[0.5.1.e,)"
-ordering="NONE"
+versionRange="[6.0.0,)"
+ordering="AFTER"
 side="BOTH"
+
+[[dependencies.rzadditions]]
+modId="ponder"
+mandatory=true
+versionRange="[1.0.91,)"
+ordering="AFTER"
+side="CLIENT"
+
 
 [[dependencies.rzadditions]]
 modId="resourcefullib"
