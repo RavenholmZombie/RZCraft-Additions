@@ -49,4 +49,22 @@ public class ModItems
             ModFluidProperties.SIMPLE_SYRUP,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
     );
+
+    // Colored Sheetmetal BlockItems
+    public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> ORANGE_SHEETMETAL_BLOCK = ITEMS.register("orange_sheetmetal", () -> new BlockItem(ModBlocks.ORANGE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> LIME_SHEETMETAL_BLOCK = ITEMS.register("lime_sheetmetal", () -> new BlockItem(ModBlocks.LIME_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> MAGENTA_SHEETMETAL_BLOCK = ITEMS.register("magenta_sheetmetal", () -> new BlockItem(ModBlocks.MAGENTA_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> PINK_SHEETMETAL_BLOCK = ITEMS.register("pink_sheetmetal", () -> new BlockItem(ModBlocks.PINK_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> YELLOW_SHEETMETAL_BLOCK = ITEMS.register("yellow_sheetmetal", () -> new BlockItem(ModBlocks.YELLOW_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> LIGHT_BLUE_SHEETMETAL_BLOCK = ITEMS.register("light_blue_sheetmetal", () -> new BlockItem(ModBlocks.LIGHT_BLUE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> SILVER_SHEETMETAL_BLOCK = ITEMS.register("light_gray_sheetmetal", () -> new BlockItem(ModBlocks.SILVER_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> GRAY_SHEETMETAL_BLOCK = ITEMS.register("gray_sheetmetal", () -> new BlockItem(ModBlocks.GRAY_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> CYAN_SHEETMETAL_BLOCK = ITEMS.register("cyan_sheetmetal", () -> new BlockItem(ModBlocks.CYAN_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> PURPLE_SHEETMETAL_BLOCK = ITEMS.register("purple_sheetmetal", () -> new BlockItem(ModBlocks.PURPLE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> BROWN_SHEETMETAL_BLOCK = ITEMS.register("brown_sheetmetal", () -> new BlockItem(ModBlocks.BROWN_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> GREEN_SHEETMETAL_BLOCK = ITEMS.register("green_sheetmetal", () -> new BlockItem(ModBlocks.GREEN_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> RED_SHEETMETAL_BLOCK = ITEMS.register("red_sheetmetal", () -> new BlockItem(ModBlocks.RED_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> BLACK_SHEETMETAL_BLOCK = ITEMS.register("black_sheetmetal", () -> new BlockItem(ModBlocks.BLACK_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+    public static final RegistryEntry<Item> BLUE_SHEETMETAL_BLOCK = ITEMS.register("blue_sheetmetal", () -> new BlockItem(ModBlocks.BLUE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
 }
