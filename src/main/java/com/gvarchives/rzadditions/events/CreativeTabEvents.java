@@ -33,6 +33,11 @@ public class CreativeTabEvents
             event.accept(ModItems.RUBBER_DUCK);
         }
 
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.PAINT_SCRAPER);
+        }
+
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
         {
             event.accept(ModItems.WHITE_SHEETMETAL_BLOCK);

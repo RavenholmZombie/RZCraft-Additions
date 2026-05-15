@@ -1,6 +1,7 @@
 package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
+import com.gvarchives.rzadditions.content.item.PaintScraper;
 import com.gvarchives.rzadditions.content.item.RubberDuck;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
@@ -49,6 +50,9 @@ public class ModItems
             ModFluidProperties.SIMPLE_SYRUP,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
     );
+
+    public static final RegistryEntry<Item> PAINT_SCRAPER = ITEMS.register("paint_scraper",
+            () -> new PaintScraper(new Item.Properties().stacksTo(1).durability(128)));
 
     // Colored Sheetmetal BlockItems
     public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));

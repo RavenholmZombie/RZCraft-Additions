@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "create:iron_sheet"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "m",
+    "s"
+  ],
+  "result": {
+    "count": 1,
+    "item": "rzadditions:paint_scraper"
+  },
+  "show_notification": true
+}

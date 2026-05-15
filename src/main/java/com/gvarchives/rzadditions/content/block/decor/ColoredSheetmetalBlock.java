@@ -1,6 +1,7 @@
 package com.gvarchives.rzadditions.content.block.decor;
 
 import com.gvarchives.rzadditions.core.ModBlocks;
+import com.gvarchives.rzadditions.core.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -32,6 +33,43 @@ public class ColoredSheetmetalBlock extends Block implements IWrenchable
                                  InteractionHand hand, BlockHitResult hit)
     {
         ItemStack stack = player.getItemInHand(hand);
+
+        if (stack.is(ModItems.PAINT_SCRAPER.get()))
+        {
+            if (this.color == DyeColor.WHITE)
+                return InteractionResult.PASS;
+
+            if (!level.isClientSide)
+            {
+                level.levelEvent(2001, pos, Block.getId(state));
+
+                level.setBlock(
+                        pos,
+                        ModBlocks.WHITE_SHEETMETAL_BLOCK.get().defaultBlockState(),
+                        Block.UPDATE_ALL
+                );
+
+                level.playSound(
+                        null,
+                        pos,
+                        SoundEvents.AXE_SCRAPE,
+                        SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F
+                );
+
+                if (!player.getAbilities().instabuild)
+                {
+                    stack.hurtAndBreak(
+                            1,
+                            player,
+                            p -> p.broadcastBreakEvent(hand)
+                    );
+                }
+            }
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
 
         if (!(stack.getItem() instanceof DyeItem dyeItem))
             return InteractionResult.PASS;

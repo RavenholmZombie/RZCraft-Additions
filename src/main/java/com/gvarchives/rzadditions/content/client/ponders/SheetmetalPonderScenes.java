@@ -1,6 +1,7 @@
 package com.gvarchives.rzadditions.content.client.ponders;
 
 import com.gvarchives.rzadditions.core.ModBlocks;
+import com.gvarchives.rzadditions.core.ModItems;
 
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.scene.SceneBuilder;
@@ -63,6 +64,23 @@ public class SheetmetalPonderScenes
                 .placeNearTarget();
 
         scene.idle(80);
+
+        scene.overlay().showControls(util.vector().topOf(sheetmetal), Pointing.DOWN, 45)
+                .rightClick()
+                .withItem(ModItems.PAINT_SCRAPER.get().getDefaultInstance());
+
+        scene.idle(15);
+
+        scene.world().setBlock(sheetmetal, ModBlocks.WHITE_SHEETMETAL_BLOCK.get().defaultBlockState(), true);
+
+        scene.effects().indicateSuccess(sheetmetal);
+
+        scene.overlay().showText(80)
+                .text("Use a Paint Scraper to remove the color and return sheetmetal to its white base.")
+                .pointAt(util.vector().centerOf(sheetmetal))
+                .placeNearTarget();
+
+        scene.idle(90);
 
         scene.markAsFinished();
     }
