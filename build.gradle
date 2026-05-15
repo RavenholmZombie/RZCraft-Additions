@@ -49,10 +49,10 @@ minecraft {
 }
 
 repositories {
-    maven {
-        name = 'tterrag maven'
-        url = 'https://maven.tterrag.com/'
-    }
+    maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
+    maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate
+    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
+
     maven {
         // location of the maven that hosts JEI files before January 2023
         name = "Progwml6's maven"
@@ -80,9 +80,13 @@ dependencies {
     // Forge
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
+    compileOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")
+    runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+    implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
 
     compileOnly fg.deobf("earth.terrarium.botarium:botarium-forge-1.20.1:2.3.4")
     runtimeOnly fg.deobf("earth.terrarium.botarium:botarium-forge-1.20.1:2.3.4")
@@ -95,7 +99,6 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:farmers-delight-398521:5051242")
     runtimeOnly fg.deobf("curse.maven:jade-324717:6855440")
     runtimeOnly fg.deobf("curse.maven:in-game-account-switcher-232676:5457030")
-    runtimeOnly fg.deobf("curse.maven:create-new-age-905861:5080957")
 }
 
 jar {
