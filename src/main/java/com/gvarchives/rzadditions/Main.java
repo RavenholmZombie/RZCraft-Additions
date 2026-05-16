@@ -22,6 +22,7 @@ public class Main
         ModSounds.SOUNDS.register(modEventBus);
         ModBlocks.BLOCKS.init();
         ModItems.ITEMS.init();
+        ModCreativeTabs.CREATIVE_TABS.init();
 
         ModFluidProperties.FLUID_PROPERTIES.initialize();
         ModFluids.FLUIDS.init();

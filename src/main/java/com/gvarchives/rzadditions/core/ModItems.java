@@ -54,6 +54,9 @@ public class ModItems
     public static final RegistryEntry<Item> PAINT_SCRAPER = ITEMS.register("paint_scraper",
             () -> new PaintScraper(new Item.Properties().stacksTo(1).durability(128)));
 
+    public static final RegistryEntry<Item> TAB_ICON = ITEMS.register("icon",
+            () -> new Item(new Item.Properties()));
+
     // Colored Sheetmetal BlockItems
     public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryEntry<Item> ORANGE_SHEETMETAL_BLOCK = ITEMS.register("orange_sheetmetal", () -> new BlockItem(ModBlocks.ORANGE_SHEETMETAL_BLOCK.get(), new Item.Properties()));

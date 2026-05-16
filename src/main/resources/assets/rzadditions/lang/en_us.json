@@ -35,5 +35,6 @@
   "rzadditions.ponder.sheetmetal_dyeing.text_1": "Sheetmetal blocks can be recolored directly in-world.",
   "rzadditions.ponder.sheetmetal_dyeing.text_2": "Right-click with a dye to lather on a new color.",
   "rzadditions.ponder.sheetmetal_dyeing.text_3": "The block is swapped to the matching sheetmetal color.",
-  "rzadditions.ponder.sheetmetal_dyeing.text_4": "Use a Paint Scraper to remove the color."
+  "rzadditions.ponder.sheetmetal_dyeing.text_4": "Use a Paint Scraper to remove the color.",
+  "itemGroup.rzadditions": "RZ's Additions"
 }
