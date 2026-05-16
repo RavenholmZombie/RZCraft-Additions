@@ -8,6 +8,7 @@ modId="rzadditions"
 version="1.0.4"
 displayName="RZ's Additions"
 authors="RavenholmZombie"
+credits="Aunuli for the paint scraper item texture."
 description='''
 A simple mod that adds simple stuff.
 '''
