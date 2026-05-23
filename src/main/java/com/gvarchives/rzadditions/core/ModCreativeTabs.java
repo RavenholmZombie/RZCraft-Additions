@@ -50,6 +50,11 @@ public class ModCreativeTabs
                                 output.accept(ModItems.SOY_MILK_BUCKET.get());
                                 output.accept(ModItems.SIMPLE_SYRUP_BUCKET.get());
 
+                                // Pills
+                                output.accept(ModItems.ADDERALL_PILL.get());
+                                output.accept(ModItems.MELATONIN_PILL.get());
+                                output.accept(ModItems.PARACETAMOL_PILL.get());
+
                                 // Sheetmetal
                                 output.accept(ModItems.WHITE_SHEETMETAL_BLOCK.get());
                                 output.accept(ModItems.ORANGE_SHEETMETAL_BLOCK.get());

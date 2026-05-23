@@ -8,6 +8,8 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.botarium.common.registry.fluid.FluidBucketItem;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -56,6 +58,34 @@ public class ModItems
 
     public static final RegistryEntry<Item> TAB_ICON = ITEMS.register("icon",
             () -> new Item(new Item.Properties()));
+
+    // Pills
+    public static final RegistryEntry<Item> ADDERALL_PILL = ITEMS.register("adderall",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(0)
+                    .saturationMod(0.0f)
+                    .alwaysEat()
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 30, 3), 1.0f)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 30, 1), 1.0f)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 20 * 30, 3), 1.0f)
+                    .build())));
+    public static final RegistryEntry<Item> MELATONIN_PILL = ITEMS.register("melatonin",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(0)
+                    .saturationMod(0.0f)
+                    .alwaysEat()
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 30, 4), 1.0f)
+                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 20 * 30, 5), 1.0f)
+                    .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 20 * 30, 3), 1.0f)
+                    .build())));
+    public static final RegistryEntry<Item> PARACETAMOL_PILL = ITEMS.register("paracetamol",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(0)
+                    .saturationMod(0.0f)
+                    .alwaysEat()
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 20 * 30, 2), 1.0f)
+                    .effect(() -> new MobEffectInstance(MobEffects.JUMP, 20 * 30, 3), 1.0f)
+                    .build())));
 
     // Colored Sheetmetal BlockItems
     public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
