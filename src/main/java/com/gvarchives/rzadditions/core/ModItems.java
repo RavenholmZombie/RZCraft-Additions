@@ -2,24 +2,25 @@ package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.content.item.PaintScraper;
+import com.gvarchives.rzadditions.content.item.Pill;
 import com.gvarchives.rzadditions.content.item.RubberDuck;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.botarium.common.registry.fluid.FluidBucketItem;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class ModItems
 {
@@ -61,31 +62,61 @@ public class ModItems
 
     // Pills
     public static final RegistryEntry<Item> ADDERALL_PILL = ITEMS.register("adderall",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(0)
-                    .saturationMod(0.0f)
-                    .alwaysEat()
-                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 30, 3), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 30, 1), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 20 * 30, 3), 1.0f)
-                    .build())));
+            () -> new Pill(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 60, 3),
+                            () -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 60, 1),
+                            () -> new MobEffectInstance(MobEffects.DIG_SPEED, 20 * 60, 3)
+                    ),
+                    null
+            ));
     public static final RegistryEntry<Item> MELATONIN_PILL = ITEMS.register("melatonin",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(0)
-                    .saturationMod(0.0f)
-                    .alwaysEat()
-                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 30, 4), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 20 * 30, 5), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 20 * 30, 3), 1.0f)
-                    .build())));
+            () -> new Pill(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 60, 4),
+                            () -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 20 * 60, 5),
+                            () -> new MobEffectInstance(MobEffects.DARKNESS, 20 * 60, 3)
+                    ),
+                    player -> {
+                        player.resetStat(Stats.CUSTOM.get(Stats.TIME_SINCE_REST));
+
+                        player.displayClientMessage(
+                                Component.literal("You feel well-rested."),
+                                true
+                        );
+                    }
+            ));
     public static final RegistryEntry<Item> PARACETAMOL_PILL = ITEMS.register("paracetamol",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(0)
-                    .saturationMod(0.0f)
-                    .alwaysEat()
-                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 20 * 30, 2), 1.0f)
-                    .effect(() -> new MobEffectInstance(MobEffects.JUMP, 20 * 30, 3), 1.0f)
-                    .build())));
+            () -> new Pill(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.REGENERATION, 20 * 60, 2),
+                            () -> new MobEffectInstance(MobEffects.JUMP, 20 * 60, 3),
+                            () -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 60, 3)
+                    ),
+                    player -> {
+                        player.getActiveEffects().stream()
+                                .filter(effect -> !effect.getEffect().isBeneficial())
+                                .map(effect -> effect.getEffect())
+                                .toList()
+                                .forEach(player::removeEffect);
+                        player.displayClientMessage(Component.literal("The aching is starting to dull."), true);
+                    }
+            ));
 
     // Colored Sheetmetal BlockItems
     public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
