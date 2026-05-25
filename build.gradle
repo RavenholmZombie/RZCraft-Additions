@@ -49,6 +49,13 @@ minecraft {
 }
 
 repositories {
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
@@ -99,6 +106,9 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:farmers-delight-398521:5051242")
     runtimeOnly fg.deobf("curse.maven:jade-324717:6855440")
     runtimeOnly fg.deobf("curse.maven:in-game-account-switcher-232676:5457030")
+
+    // Worldgen/template pool injection helper for village structure injection
+    runtimeOnly fg.deobf("maven.modrinth:lithostitched:1.4.11-forge-1.20")
 }
 
 jar {
