@@ -9,6 +9,7 @@
   "item.rzadditions.soy_milk_bucket": "Soy Milk Bucket",
   "item.rzadditions.simple_syrup_bucket": "Simple Syrup Bucket",
   "item.rzadditions.paint_scraper": "Paint Scraper",
+  "item.rzadditions.capsule": "Pill Capsule",
   "item.rzadditions.adderall": "Adderall",
   "item.rzadditions.melatonin": "Melatonin",
   "item.rzadditions.paracetamol": "Paracetamol",
@@ -34,10 +35,14 @@
   "block.rzadditions.black_sheetmetal": "Black Sheetmetal",
   "block.rzadditions.purple_sheetmetal": "Purple Sheetmetal",
   "block.rzadditions.blue_sheetmetal": "Blue Sheetmetal",
+  "block.rzadditions.hemp_crop": "Hemp",
+  "block.rzadditions.herbalist_table": "Herbalist's Table",
+  "item.rzadditions.blunt": "Joint",
   "rzadditions.ponder.sheetmetal_dyeing.header": "Dyeing Sheetmetal",
   "rzadditions.ponder.sheetmetal_dyeing.text_1": "Sheetmetal blocks can be recolored directly in-world.",
   "rzadditions.ponder.sheetmetal_dyeing.text_2": "Right-click with a dye to lather on a new color.",
   "rzadditions.ponder.sheetmetal_dyeing.text_3": "The block is swapped to the matching sheetmetal color.",
   "rzadditions.ponder.sheetmetal_dyeing.text_4": "Use a Paint Scraper to remove the color.",
-  "itemGroup.rzadditions": "RZ's Additions"
+  "itemGroup.rzadditions": "RZ's Additions",
+  "entity.minecraft.villager.rzadditions.herbalist": "The Plug"
 }

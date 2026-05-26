@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Pill extends Item
+public class EffectItem extends Item
 {
     private final List<Supplier<MobEffectInstance>> effects;
     private final Consumer<ServerPlayer> extraAction;
 
-    public Pill(Properties properties, List<Supplier<MobEffectInstance>> effects, Consumer<ServerPlayer> extraAction)
+    public EffectItem(Properties properties, List<Supplier<MobEffectInstance>> effects, Consumer<ServerPlayer> extraAction)
     {
         super(properties);
         this.effects = effects;

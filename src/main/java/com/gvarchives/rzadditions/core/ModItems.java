@@ -2,8 +2,9 @@ package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.content.item.PaintScraper;
-import com.gvarchives.rzadditions.content.item.Pill;
+import com.gvarchives.rzadditions.content.item.EffectItem;
 import com.gvarchives.rzadditions.content.item.RubberDuck;
+import com.gvarchives.rzadditions.content.item.SmokableItem;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -13,7 +14,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -61,8 +61,11 @@ public class ModItems
             () -> new Item(new Item.Properties()));
 
     // Pills
+    public static final RegistryEntry<Item> EMPTY_CAPSULE = ITEMS.register("capsule",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryEntry<Item> ADDERALL_PILL = ITEMS.register("adderall",
-            () -> new Pill(
+            () -> new EffectItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(0)
                             .saturationMod(0.0F)
@@ -76,7 +79,7 @@ public class ModItems
                     null
             ));
     public static final RegistryEntry<Item> MELATONIN_PILL = ITEMS.register("melatonin",
-            () -> new Pill(
+            () -> new EffectItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(0)
                             .saturationMod(0.0F)
@@ -97,7 +100,7 @@ public class ModItems
                     }
             ));
     public static final RegistryEntry<Item> PARACETAMOL_PILL = ITEMS.register("paracetamol",
-            () -> new Pill(
+            () -> new EffectItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(0)
                             .saturationMod(0.0F)
@@ -117,6 +120,28 @@ public class ModItems
                         player.displayClientMessage(Component.literal("The aching is starting to dull."), true);
                     }
             ));
+
+    // Kush
+    public static final RegistryEntry<Item> HEMP = ITEMS.register("hemp", () -> new BlockItem(ModBlocks.HEMP_CROP.get(), new Item.Properties()));
+
+    // Blunt
+    public static final RegistryEntry<Item> BLUNT = ITEMS.register("blunt",
+            () -> new SmokableItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .durability(8),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.CONFUSION, 20 * 20, 0),
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0)
+                    ),
+                    player -> player.displayClientMessage(
+                            Component.literal("You feel incredibly mellow."),
+                            true
+                    )
+            ));
+
+    public static final RegistryEntry<Item> HERBALIST_TABLE = ITEMS.register("herbalist_table",
+            () -> new BlockItem(ModBlocks.HERBALIST_TABLE.get(), new Item.Properties()));
 
     // Colored Sheetmetal BlockItems
     public static final RegistryEntry<Item> WHITE_SHEETMETAL_BLOCK = ITEMS.register("white_sheetmetal", () -> new BlockItem(ModBlocks.WHITE_SHEETMETAL_BLOCK.get(), new Item.Properties()));

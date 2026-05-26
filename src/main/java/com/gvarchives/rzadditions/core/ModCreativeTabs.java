@@ -35,10 +35,12 @@ public class ModCreativeTabs
                             .icon(ModCreativeTabs::tabPlayerHead)
                             .displayItems((parameters, output) ->
                             {
-                                // Foods
+                                // Foods and Crops
                                 output.accept(ModItems.TOFU.get());
                                 output.accept(ModItems.SOY_MASH.get());
                                 output.accept(ModItems.SOYBEANS.get());
+                                output.accept(ModItems.HEMP.get());
+                                output.accept(ModItems.BLUNT.get());
 
                                 // Tools
                                 output.accept(ModItems.PAINT_SCRAPER.get());
@@ -51,6 +53,7 @@ public class ModCreativeTabs
                                 output.accept(ModItems.SIMPLE_SYRUP_BUCKET.get());
 
                                 // Pills
+                                output.accept(ModItems.EMPTY_CAPSULE.get());
                                 output.accept(ModItems.ADDERALL_PILL.get());
                                 output.accept(ModItems.MELATONIN_PILL.get());
                                 output.accept(ModItems.PARACETAMOL_PILL.get());
@@ -72,6 +75,9 @@ public class ModCreativeTabs
                                 output.accept(ModItems.RED_SHEETMETAL_BLOCK.get());
                                 output.accept(ModItems.BLACK_SHEETMETAL_BLOCK.get());
                                 output.accept(ModItems.BLUE_SHEETMETAL_BLOCK.get());
+
+                                // Villager POI Blocks
+                                output.accept(ModItems.HERBALIST_TABLE.get());
                             })
                             .build()
             );

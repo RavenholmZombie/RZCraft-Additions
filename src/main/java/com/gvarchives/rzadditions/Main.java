@@ -27,6 +27,10 @@ public class Main
         ModFluidProperties.FLUID_PROPERTIES.initialize();
         ModFluids.FLUIDS.init();
 
+//        ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
+        ModPoiTypes.POI_TYPES.register(modEventBus);
+        ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
     }
 

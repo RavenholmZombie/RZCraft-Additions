@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "age=0": { "model": "rzadditions:block/hemp_stage4" },
+    "age=1": { "model": "rzadditions:block/hemp_stage4" },
+
+    "age=2": { "model": "rzadditions:block/hemp_stage4" },
+    "age=3": { "model": "rzadditions:block/hemp_stage5" },
+    "age=4": { "model": "rzadditions:block/hemp_stage5" },
+
+    "age=5": { "model": "rzadditions:block/hemp_stage4" },
+    "age=6": { "model": "rzadditions:block/hemp_stage4" },
+    "age=7": { "model": "rzadditions:block/hemp_stage4" },
+
+    "age=8": { "model": "rzadditions:block/hemp_stage4" },
+    "age=9": { "model": "rzadditions:block/hemp_stage4" },
+    "age=10": { "model": "rzadditions:block/hemp_stage4" },
+
+    "age=11": { "model": "rzadditions:block/hemp_stage4" },
+    "age=12": { "model": "rzadditions:block/hemp_stage4" },
+    "age=13": { "model": "rzadditions:block/hemp_stage4" },
+
+    "age=14": { "model": "rzadditions:block/hemp_stage5" },
+    "age=15": { "model": "rzadditions:block/hemp_stage5" }
+  }
+}

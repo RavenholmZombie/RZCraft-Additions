@@ -1,8 +1,10 @@
 package com.gvarchives.rzadditions.core;
 
 import com.gvarchives.rzadditions.Main;
+import com.gvarchives.rzadditions.content.block.crops.HempCropBlock;
 import com.gvarchives.rzadditions.content.block.crops.SoybeanCropBlock;
 import com.gvarchives.rzadditions.content.block.decor.ColoredSheetmetalBlock;
+import com.gvarchives.rzadditions.content.block.decor.HerbalistTableBlock;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -23,6 +25,8 @@ public class ModBlocks
 
     public static final RegistryEntry<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop", () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
+    public static final RegistryEntry<Block> HERBALIST_TABLE = BLOCKS.register("herbalist_table", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion().isViewBlocking((state, level, pos) -> false)));
+
     // Colored Sheetmetal Blocks
     public static final RegistryEntry<Block> WHITE_SHEETMETAL_BLOCK = BLOCKS.register("white_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.WHITE));
     public static final RegistryEntry<Block> ORANGE_SHEETMETAL_BLOCK = BLOCKS.register("orange_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.ORANGE));
@@ -40,4 +44,7 @@ public class ModBlocks
     public static final RegistryEntry<Block> RED_SHEETMETAL_BLOCK = BLOCKS.register("red_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.RED));
     public static final RegistryEntry<Block> BLACK_SHEETMETAL_BLOCK = BLOCKS.register("black_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLACK));
     public static final RegistryEntry<Block> BLUE_SHEETMETAL_BLOCK = BLOCKS.register("blue_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLUE));
+
+    // The good kush
+    public static final RegistryEntry<Block> HEMP_CROP = BLOCKS.register("hemp_crop", () -> new HempCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE)));
 }

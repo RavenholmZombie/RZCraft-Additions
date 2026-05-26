@@ -42,6 +42,12 @@ versionRange="[1.0.91,)"
 ordering="AFTER"
 side="CLIENT"
 
+[[dependencies.rzadditions]]
+modId="lithostitched"
+mandatory=true
+versionRange="[1.4.11,)"
+ordering="AFTER"
+side="BOTH"
 
 [[dependencies.rzadditions]]
 modId="resourcefullib"
