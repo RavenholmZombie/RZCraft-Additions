@@ -24,4 +24,11 @@ public class ModFluidProperties
             .viscosity(2500)
             .density(2500)
             .canConvertToSource(false));
+
+    public static final FluidData THC_OIL = FLUID_PROPERTIES.register("thc_oil", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/thc_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/thc_flow"))
+            .viscosity(3000)
+            .density(3500)
+            .canConvertToSource(false));
 }

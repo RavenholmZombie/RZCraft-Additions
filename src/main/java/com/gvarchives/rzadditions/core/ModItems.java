@@ -28,13 +28,13 @@ public class ModItems
 
     public static final RegistryEntry<Item> TOFU = ITEMS.register("tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(4)       // hunger restored
+                    .nutrition(4)
                     .saturationMod(0.3f)
                     .build())));
 
     public static final RegistryEntry<Item> SOY_MASH = ITEMS.register("soy_mash",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(2)       // hunger restored
+                    .nutrition(2)
                     .saturationMod(0.3f)
                     .build())));
 
@@ -54,15 +54,16 @@ public class ModItems
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
     );
 
-    public static final RegistryEntry<Item> PAINT_SCRAPER = ITEMS.register("paint_scraper",
-            () -> new PaintScraper(new Item.Properties().stacksTo(1).durability(128)));
+    public static final RegistryEntry<Item> THC_OIL_BUCKET = ITEMS.register("thc_oil_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.THC_OIL,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
 
-    public static final RegistryEntry<Item> TAB_ICON = ITEMS.register("icon",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryEntry<Item> PAINT_SCRAPER = ITEMS.register("paint_scraper", () -> new PaintScraper(new Item.Properties().stacksTo(1).durability(128)));
+
 
     // Pills
-    public static final RegistryEntry<Item> EMPTY_CAPSULE = ITEMS.register("capsule",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryEntry<Item> EMPTY_CAPSULE = ITEMS.register("capsule", () -> new Item(new Item.Properties()));
 
     public static final RegistryEntry<Item> ADDERALL_PILL = ITEMS.register("adderall",
             () -> new EffectItem(
@@ -124,6 +125,9 @@ public class ModItems
     // Kush
     public static final RegistryEntry<Item> HEMP = ITEMS.register("hemp", () -> new BlockItem(ModBlocks.HEMP_CROP.get(), new Item.Properties()));
 
+    public static final RegistryEntry<Item> HASH = ITEMS.register("hash",
+            () -> new Item(new Item.Properties()));
+
     // Blunt
     public static final RegistryEntry<Item> BLUNT = ITEMS.register("blunt",
             () -> new SmokableItem(
@@ -132,10 +136,11 @@ public class ModItems
                             .durability(8),
                     List.of(
                             () -> new MobEffectInstance(MobEffects.CONFUSION, 20 * 20, 0),
-                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0)
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0),
+                            () -> new MobEffectInstance(MobEffects.HUNGER, 20 * 15, 0)
                     ),
                     player -> player.displayClientMessage(
-                            Component.literal("You feel incredibly mellow."),
+                            Component.literal("You feel incredibly mellow... and hungry."),
                             true
                     )
             ));

@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "rzadditions:hemp"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "rzadditions:hash"
+    }
+  ]
+}

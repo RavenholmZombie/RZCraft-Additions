@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "item": "rzadditions:hash" },
+    { "fluid": "minecraft:water", "amount": 1000 }
+  ],
+  "results": [
+    { "fluid": "rzadditions:thc_oil", "amount": 500 }
+  ],
+  "heatRequirement": "superheated"
+}

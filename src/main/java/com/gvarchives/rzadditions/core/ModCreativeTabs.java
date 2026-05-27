@@ -41,6 +41,7 @@ public class ModCreativeTabs
                                 output.accept(ModItems.SOYBEANS.get());
                                 output.accept(ModItems.HEMP.get());
                                 output.accept(ModItems.BLUNT.get());
+                                output.accept(ModItems.HASH.get());
 
                                 // Tools
                                 output.accept(ModItems.PAINT_SCRAPER.get());
@@ -51,6 +52,7 @@ public class ModCreativeTabs
                                 // Fluids
                                 output.accept(ModItems.SOY_MILK_BUCKET.get());
                                 output.accept(ModItems.SIMPLE_SYRUP_BUCKET.get());
+                                output.accept(ModItems.THC_OIL_BUCKET.get());
 
                                 // Pills
                                 output.accept(ModItems.EMPTY_CAPSULE.get());

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "item": "minecraft:paper"
+    },
+    "h": {
+      "item": "rzadditions:hash"
+    }
+  },
+  "pattern": [
+    "ppp",
+    "hhh",
+    "ppp"
+  ],
+  "result": {
+    "count": 1,
+    "item": "rzadditions:blunt"
+  },
+  "show_notification": true
+}
