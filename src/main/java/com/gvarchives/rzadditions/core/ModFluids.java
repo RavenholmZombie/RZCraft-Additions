@@ -22,4 +22,15 @@ public class ModFluids
     public static final RegistryEntry<Fluid> THC_OIL = FLUIDS.register("thc_oil", () -> new BotariumSourceFluid(ModFluidProperties.THC_OIL));
     public static final RegistryEntry<Fluid> FLOWING_THC_OIL = FLUIDS.register("flowing_thc_oil", () -> new BotariumFlowingFluid(ModFluidProperties.THC_OIL));
 
+    public static final RegistryEntry<Fluid> ADDERALL_GEL = FLUIDS.register("adderall_gel", () -> new BotariumSourceFluid(ModFluidProperties.ADDERALL_GEL));
+    public static final RegistryEntry<Fluid> FLOWING_ADDERALL_GEL = FLUIDS.register("flowing_adderall_gel", () -> new BotariumFlowingFluid(ModFluidProperties.ADDERALL_GEL));
+
+    public static final RegistryEntry<Fluid> MELATONIN_GEL = FLUIDS.register("melatonin_gel", () -> new BotariumSourceFluid(ModFluidProperties.MELATONIN_GEL));
+    public static final RegistryEntry<Fluid> FLOWING_MELATONIN_GEL = FLUIDS.register("flowing_melatonin_gel", () -> new BotariumFlowingFluid(ModFluidProperties.MELATONIN_GEL));
+
+    public static final RegistryEntry<Fluid> PARACETAMOL_GEL = FLUIDS.register("paracetamol_gel", () -> new BotariumSourceFluid(ModFluidProperties.PARACETAMOL_GEL));
+    public static final RegistryEntry<Fluid> FLOWING_PARACETAMOL_GEL = FLUIDS.register("flowing_paracetamol_gel", () -> new BotariumFlowingFluid(ModFluidProperties.PARACETAMOL_GEL));
+
+    public static final RegistryEntry<Fluid> GEL_BASE = FLUIDS.register("gel_base", () -> new BotariumSourceFluid(ModFluidProperties.GEL_BASE));
+    public static final RegistryEntry<Fluid> FLOWING_GEL_BASE = FLUIDS.register("flowing_gel_base", () -> new BotariumFlowingFluid(ModFluidProperties.GEL_BASE));
 }

@@ -31,4 +31,32 @@ public class ModFluidProperties
             .viscosity(3000)
             .density(3500)
             .canConvertToSource(false));
+
+    public static final FluidData GEL_BASE = FLUID_PROPERTIES.register("gel_base", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/base_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/base_flow"))
+            .viscosity(3000)
+            .density(3500)
+            .canConvertToSource(false));
+
+    public static final FluidData ADDERALL_GEL = FLUID_PROPERTIES.register("adderall", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/adderall_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/adderall_flow"))
+            .viscosity(3000)
+            .density(3500)
+            .canConvertToSource(false));
+
+    public static final FluidData MELATONIN_GEL = FLUID_PROPERTIES.register("melatonin", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/melatonin_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/melatonin_flow"))
+            .viscosity(3000)
+            .density(3500)
+            .canConvertToSource(false));
+
+    public static final FluidData PARACETAMOL_GEL = FLUID_PROPERTIES.register("paracetamol", FluidProperties.create()
+            .still(fromNamespaceAndPath(Main.MOD_ID, "block/paracetamol_still"))
+            .flowing(fromNamespaceAndPath(Main.MOD_ID, "block/paracetamol_flow"))
+            .viscosity(3000)
+            .density(3500)
+            .canConvertToSource(false));
 }

@@ -12,6 +12,7 @@ import earth.terrarium.botarium.common.registry.fluid.FluidBucketItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -56,6 +57,23 @@ public class ModItems
 
     public static final RegistryEntry<Item> THC_OIL_BUCKET = ITEMS.register("thc_oil_bucket", () -> new FluidBucketItem(
             ModFluidProperties.THC_OIL,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
+
+    public static final RegistryEntry<Item> ADDERALL_GEL_BUCKET = ITEMS.register("adderall_gel_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.ADDERALL_GEL,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
+    public static final RegistryEntry<Item> MELATONIN_GEL_BUCKET = ITEMS.register("melatonin_gel_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.MELATONIN_GEL,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
+    public static final RegistryEntry<Item> PARACETAMOL_GEL_BUCKET = ITEMS.register("paracetamol_gel_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.PARACETAMOL_GEL,
+            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
+    );
+    public static final RegistryEntry<Item> GEL_BASE_BUCKET = ITEMS.register("gel_base_bucket", () -> new FluidBucketItem(
+            ModFluidProperties.GEL_BASE,
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))
     );
 
@@ -139,10 +157,13 @@ public class ModItems
                             () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0),
                             () -> new MobEffectInstance(MobEffects.HUNGER, 20 * 15, 0)
                     ),
-                    player -> player.displayClientMessage(
-                            Component.literal("You feel incredibly mellow... and hungry."),
-                            true
-                    )
+                    player -> {
+                        if(!player.level().getGameRules().getBoolean(ModGamerules.JOINT_CAUSES_DIZZY))
+                        {
+                            player.removeEffect(MobEffects.CONFUSION);
+                        }
+                        player.displayClientMessage(Component.literal("You feel mellowed out."), true);
+                    }
             ));
 
     public static final RegistryEntry<Item> HERBALIST_TABLE = ITEMS.register("herbalist_table",

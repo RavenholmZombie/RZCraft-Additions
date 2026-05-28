@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "fluid": "create:potion",
+      "amount": 500,
+      "nbt": {
+        "Potion": "minecraft:thick"
+      }
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "results": [
+    {
+      "fluid": "rzadditions:gel_base",
+      "amount": 1000
+    }
+  ]
+}

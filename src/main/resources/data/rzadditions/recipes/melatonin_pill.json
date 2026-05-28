@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "rzadditions:capsule"
+    },
+    {
+      "amount": 100,
+      "fluid": "rzadditions:melatonin_gel",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "rzadditions:melatonin"
+    }
+  ]
+}

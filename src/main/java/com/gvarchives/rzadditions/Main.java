@@ -44,6 +44,12 @@ public class Main
                     GameRules.BooleanValue.create(true)
             );
             LOGGER.info("Registered gamerule: playJoinAndLeaveSounds");
+            ModGamerules.JOINT_CAUSES_DIZZY = GameRules.register(
+                    "jointsCauseNausea",
+                    GameRules.Category.PLAYER,
+                    GameRules.BooleanValue.create(true)
+            );
+            LOGGER.info("Registered gamerule: jointsCauseNausea");
         });
     }
 }

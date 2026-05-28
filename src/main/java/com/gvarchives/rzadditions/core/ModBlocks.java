@@ -20,12 +20,20 @@ public class ModBlocks
 {
     public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, Main.MOD_ID);
 
+    // Fluids
     public static final RegistryEntry<Block> SOY_MILK = BLOCKS.register("soy_milk", () -> new BotariumLiquidBlock(ModFluidProperties.SOY_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
     public static final RegistryEntry<Block> SIMPLE_SYRUP = BLOCKS.register("simple_syrup", () -> new BotariumLiquidBlock(ModFluidProperties.SIMPLE_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
     public static final RegistryEntry<Block> THC_OIL = BLOCKS.register("thc_oil", () -> new BotariumLiquidBlock(ModFluidProperties.THC_OIL, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_GREEN)));
+    public static final RegistryEntry<Block> GEL_BASE = BLOCKS.register("gel_base", () -> new BotariumLiquidBlock(ModFluidProperties.GEL_BASE, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_LIGHT_GRAY)));
+    public static final RegistryEntry<Block> ADDERALL_GEL = BLOCKS.register("adderall_gel", () -> new BotariumLiquidBlock(ModFluidProperties.ADDERALL_GEL, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_BLUE)));
+    public static final RegistryEntry<Block> MELATONIN_GEL = BLOCKS.register("melatonin_gel", () -> new BotariumLiquidBlock(ModFluidProperties.MELATONIN_GEL, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryEntry<Block> PARACETAMOL_GEL = BLOCKS.register("paracetamol_gel", () -> new BotariumLiquidBlock(ModFluidProperties.PARACETAMOL_GEL, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.COLOR_ORANGE)));
 
+    // Crops
     public static final RegistryEntry<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop", () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryEntry<Block> HEMP_CROP = BLOCKS.register("hemp_crop", () -> new HempCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE)));
 
+    // POI Blocks
     public static final RegistryEntry<Block> HERBALIST_TABLE = BLOCKS.register("herbalist_table", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion().isViewBlocking((state, level, pos) -> false)));
 
     // Colored Sheetmetal Blocks
@@ -45,7 +53,4 @@ public class ModBlocks
     public static final RegistryEntry<Block> RED_SHEETMETAL_BLOCK = BLOCKS.register("red_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.RED));
     public static final RegistryEntry<Block> BLACK_SHEETMETAL_BLOCK = BLOCKS.register("black_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLACK));
     public static final RegistryEntry<Block> BLUE_SHEETMETAL_BLOCK = BLOCKS.register("blue_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLUE));
-
-    // The good kush
-    public static final RegistryEntry<Block> HEMP_CROP = BLOCKS.register("hemp_crop", () -> new HempCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE)));
 }

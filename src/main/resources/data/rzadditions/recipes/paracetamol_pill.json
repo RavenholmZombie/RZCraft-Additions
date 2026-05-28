@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "rzadditions:capsule"
+    },
+    {
+      "amount": 100,
+      "fluid": "rzadditions:paracetamol_gel",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "rzadditions:paracetamol"
+    }
+  ]
+}

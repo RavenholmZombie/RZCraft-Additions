@@ -53,6 +53,10 @@ public class ModCreativeTabs
                                 output.accept(ModItems.SOY_MILK_BUCKET.get());
                                 output.accept(ModItems.SIMPLE_SYRUP_BUCKET.get());
                                 output.accept(ModItems.THC_OIL_BUCKET.get());
+                                output.accept(ModItems.ADDERALL_GEL_BUCKET.get());
+                                output.accept(ModItems.MELATONIN_GEL_BUCKET.get());
+                                output.accept(ModItems.PARACETAMOL_GEL_BUCKET.get());
+                                output.accept(ModItems.GEL_BASE_BUCKET.get());
 
                                 // Pills
                                 output.accept(ModItems.EMPTY_CAPSULE.get());
