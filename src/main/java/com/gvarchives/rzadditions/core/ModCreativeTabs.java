@@ -1,12 +1,10 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.Main;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -14,25 +12,20 @@ import net.minecraft.world.item.Items;
 
 public class ModCreativeTabs
 {
-    private static ItemStack tabPlayerHead()
+    private static ItemStack iconStack()
     {
-        ItemStack stack = new ItemStack(Items.PLAYER_HEAD);
-
-        CompoundTag tag = new CompoundTag();
-        tag.putString("SkullOwner", "RavenholmZombie");
-        stack.setTag(tag);
-
+        ItemStack stack = new ItemStack(ModItems.GREEN_SHEETMETAL_BLOCK.get());
         return stack;
     }
 
     public static final ResourcefulRegistry<CreativeModeTab> CREATIVE_TABS =
-            ResourcefulRegistries.create(BuiltInRegistries.CREATIVE_MODE_TAB, Main.MOD_ID);
+            ResourcefulRegistries.create(BuiltInRegistries.CREATIVE_MODE_TAB, ModReferences.MOD_ID);
 
     public static final RegistryEntry<CreativeModeTab> RZADDITIONS_TAB =
             CREATIVE_TABS.register("rzadditions_tab", () ->
                     CreativeModeTab.builder()
                             .title(Component.translatable("itemGroup.rzadditions"))
-                            .icon(ModCreativeTabs::tabPlayerHead)
+                            .icon(ModCreativeTabs::iconStack)
                             .displayItems((parameters, output) ->
                             {
                                 // Foods and Crops

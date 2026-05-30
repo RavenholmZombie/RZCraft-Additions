@@ -1,6 +1,5 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.Main;
 import com.gvarchives.rzadditions.content.item.PaintScraper;
 import com.gvarchives.rzadditions.content.item.EffectItem;
 import com.gvarchives.rzadditions.content.item.RubberDuck;
@@ -12,7 +11,6 @@ import earth.terrarium.botarium.common.registry.fluid.FluidBucketItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -25,7 +23,7 @@ import java.util.List;
 
 public class ModItems
 {
-    public static final ResourcefulRegistry<Item> ITEMS = ResourcefulRegistries.create(BuiltInRegistries.ITEM, Main.MOD_ID);
+    public static final ResourcefulRegistry<Item> ITEMS = ResourcefulRegistries.create(BuiltInRegistries.ITEM, ModReferences.MOD_ID);
 
     public static final RegistryEntry<Item> TOFU = ITEMS.register("tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()

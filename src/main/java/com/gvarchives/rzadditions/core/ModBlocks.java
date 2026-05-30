@@ -1,10 +1,9 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.Main;
+import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.content.block.crops.HempCropBlock;
 import com.gvarchives.rzadditions.content.block.crops.SoybeanCropBlock;
 import com.gvarchives.rzadditions.content.block.decor.ColoredSheetmetalBlock;
-import com.gvarchives.rzadditions.content.block.decor.HerbalistTableBlock;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -18,7 +17,7 @@ import net.minecraft.world.level.material.MapColor;
 
 public class ModBlocks
 {
-    public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, Main.MOD_ID);
+    public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, ModReferences.MOD_ID);
 
     // Fluids
     public static final RegistryEntry<Block> SOY_MILK = BLOCKS.register("soy_milk", () -> new BotariumLiquidBlock(ModFluidProperties.SOY_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));

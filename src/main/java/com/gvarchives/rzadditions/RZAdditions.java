@@ -9,13 +9,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(Main.MOD_ID)
-public class Main
+@Mod(ModReferences.MOD_ID)
+public class RZAdditions
 {
-    public static final String MOD_ID = "rzadditions";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static final Logger LOGGER = LogManager.getLogger(ModReferences.MOD_ID);
 
-    public Main()
+    public RZAdditions()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -27,7 +26,6 @@ public class Main
         ModFluidProperties.FLUID_PROPERTIES.initialize();
         ModFluids.FLUIDS.init();
 
-//        ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
         ModPoiTypes.POI_TYPES.register(modEventBus);
         ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
 

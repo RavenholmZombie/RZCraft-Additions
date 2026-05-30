@@ -1,7 +1,8 @@
 package com.gvarchives.rzadditions.events;
 
-import com.gvarchives.rzadditions.Main;
+import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.core.ModItems;
+import com.gvarchives.rzadditions.core.ModReferences;
 import com.gvarchives.rzadditions.core.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -14,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = ModReferences.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class VillagerTradeEvents
 {
     @SubscribeEvent
