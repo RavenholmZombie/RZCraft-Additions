@@ -2,6 +2,7 @@ package com.gvarchives.rzadditions.content.block.decor;
 
 import com.gvarchives.rzadditions.core.ModBlocks;
 import com.gvarchives.rzadditions.core.ModItems;
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -15,7 +16,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 

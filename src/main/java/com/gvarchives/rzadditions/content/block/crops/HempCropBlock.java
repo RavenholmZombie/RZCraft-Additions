@@ -1,122 +1,44 @@
 package com.gvarchives.rzadditions.content.block.crops;
 
+import com.gvarchives.rzadditions.core.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.SugarCaneBlock;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.PlantType;
 
-public class HempCropBlock extends SugarCaneBlock implements BonemealableBlock
+public class HempCropBlock extends CropBlock
 {
-    private static final int MAX_HEIGHT = 2;
-
-    public HempCropBlock(Properties properties)
+    public HempCropBlock(BlockBehaviour.Properties properties)
     {
         super(properties);
     }
 
-    private int getColumnHeight(LevelReader level, BlockPos pos)
+    @Override
+    protected Item getBaseSeedId()
     {
-        BlockPos bottom = pos;
-
-        while (level.getBlockState(bottom.below()).is(this))
-            bottom = bottom.below();
-
-        int height = 1;
-        BlockPos cursor = bottom.above();
-
-        while (level.getBlockState(cursor).is(this))
-        {
-            height++;
-            cursor = cursor.above();
-        }
-
-        return height;
-    }
-
-    private BlockPos getTopBlock(LevelReader level, BlockPos pos)
-    {
-        BlockPos top = pos;
-
-        while (level.getBlockState(top.above()).is(this))
-            top = top.above();
-
-        return top;
-    }
-
-    private int ageForHeight(int height)
-    {
-        return switch (height)
-        {
-            case 1 -> 0;
-            case 2 -> 3;
-            case 3 -> 6;
-            case 4 -> 9;
-            case 5 -> 12;
-            default -> 15;
-        };
+        return ModItems.HEMP.get();
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
+    public PlantType getPlantType(BlockGetter world, BlockPos pos)
     {
-        BlockPos top = getTopBlock(level, pos);
-
-        if (!level.isEmptyBlock(top.above()))
-            return;
-
-        if (getColumnHeight(level, pos) >= MAX_HEIGHT)
-            return;
-
-        int age = level.getBlockState(top).getValue(AGE);
-
-        if (age >= 15)
-        {
-            int currentHeight = getColumnHeight(level, pos);
-            int newHeight = currentHeight + 1;
-
-            level.setBlockAndUpdate(
-                    top.above(),
-                    defaultBlockState().setValue(AGE, ageForHeight(newHeight))
-            );
-
-            level.setBlock(top, level.getBlockState(top).setValue(AGE, ageForHeight(currentHeight)), 4);
-        }
-        else
-        {
-            level.setBlock(top, level.getBlockState(top).setValue(AGE, age + 1), 4);
-        }
+        return PlantType.CROP; // behaves like wheat
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient)
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random)
     {
-        BlockPos top = getTopBlock(level, pos);
-        return getColumnHeight(level, pos) < MAX_HEIGHT && level.isEmptyBlock(top.above());
+        super.randomTick(state, world, pos, random);
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state)
+    public int getMaxAge()
     {
-        return true;
-    }
-
-    @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state)
-    {
-        BlockPos top = getTopBlock(level, pos);
-
-        if (getColumnHeight(level, pos) < MAX_HEIGHT && level.isEmptyBlock(top.above()))
-        {
-            int newHeight = getColumnHeight(level, pos) + 1;
-
-            level.setBlockAndUpdate(
-                    top.above(),
-                    defaultBlockState().setValue(AGE, ageForHeight(newHeight))
-            );
-        }
+        return MAX_AGE;
     }
 }

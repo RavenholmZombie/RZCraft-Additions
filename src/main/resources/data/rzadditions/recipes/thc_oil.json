@@ -9,11 +9,10 @@
     { "item": "rzadditions:hash" },
     { "item": "rzadditions:hash" },
     { "item": "rzadditions:hash" },
-    { "item": "rzadditions:hash" },
-    { "fluid": "minecraft:water", "amount": 1000 }
+    { "item": "rzadditions:hash" }
   ],
   "results": [
-    { "fluid": "rzadditions:thc_oil", "amount": 500 }
+    { "fluid": "rzadditions:thc_oil", "amount": 256 }
   ],
   "heatRequirement": "superheated"
 }

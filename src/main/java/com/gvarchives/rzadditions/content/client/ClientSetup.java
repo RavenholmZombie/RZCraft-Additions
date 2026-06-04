@@ -23,13 +23,17 @@ public class ClientSetup
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOYBEAN_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.HEMP_CROP.get(), RenderType.cutout());
 
-        RZAdditions.LOGGER.info("Client Setup Completed.");
+        RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+        RZAdditions.LOGGER.info("=");
+        RZAdditions.LOGGER.info("= RZ's Additions " + ModReferences.VERSION);
+        RZAdditions.LOGGER.info("= Client Setup Complete. ");
+        RZAdditions.LOGGER.info("=");
+        RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
         if (!ponderRegistered)
         {
             PonderIndex.addPlugin(new RZPonderPlugin());
             ponderRegistered = true;
-            RZAdditions.LOGGER.info("Registered RZAdditions Ponder plugin through PonderIndex.");
         }
     }
 }

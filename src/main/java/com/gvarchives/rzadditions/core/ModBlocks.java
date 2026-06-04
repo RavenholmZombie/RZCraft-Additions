@@ -1,6 +1,5 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.content.block.crops.HempCropBlock;
 import com.gvarchives.rzadditions.content.block.crops.SoybeanCropBlock;
 import com.gvarchives.rzadditions.content.block.decor.ColoredSheetmetalBlock;
@@ -30,7 +29,7 @@ public class ModBlocks
 
     // Crops
     public static final RegistryEntry<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop", () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
-    public static final RegistryEntry<Block> HEMP_CROP = BLOCKS.register("hemp_crop", () -> new HempCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE)));
+    public static final RegistryEntry<Block> HEMP_CROP = BLOCKS.register("hemp_crop", () -> new HempCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
     // POI Blocks
     public static final RegistryEntry<Block> HERBALIST_TABLE = BLOCKS.register("herbalist_table", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion().isViewBlocking((state, level, pos) -> false)));

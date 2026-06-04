@@ -11,8 +11,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import javax.annotation.Nullable;
-
 public class RubberDuck extends Item
 {
     public RubberDuck(Properties properties)

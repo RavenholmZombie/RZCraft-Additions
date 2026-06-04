@@ -1,7 +1,7 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.content.item.PaintScraper;
 import com.gvarchives.rzadditions.content.item.EffectItem;
+import com.gvarchives.rzadditions.content.item.PaintScraper;
 import com.gvarchives.rzadditions.content.item.RubberDuck;
 import com.gvarchives.rzadditions.content.item.SmokableItem;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
@@ -161,6 +161,80 @@ public class ModItems
                             player.removeEffect(MobEffects.CONFUSION);
                         }
                         player.displayClientMessage(Component.literal("You feel mellowed out."), true);
+                    }
+            ));
+
+    // Edibles
+    public static final RegistryEntry<Item> RED_EDIBLE = ITEMS.register("red_edible",
+            () -> new EffectItem(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.CONFUSION, 20 * 20, 0),
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0),
+                            () -> new MobEffectInstance(MobEffects.HUNGER, 20 * 15, 0)
+                    ),
+                    player ->
+                    {
+                        if(!player.level().getGameRules().getBoolean(ModGamerules.JOINT_CAUSES_DIZZY))
+                        {
+                            player.removeEffect(MobEffects.CONFUSION);
+                        }
+                        player.displayClientMessage(
+                                Component.literal("You feel mellowed out."),
+                                true
+                        );
+                    }
+            ));
+    public static final RegistryEntry<Item> GREEN_EDIBLE = ITEMS.register("green_edible",
+            () -> new EffectItem(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.CONFUSION, 20 * 20, 0),
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0),
+                            () -> new MobEffectInstance(MobEffects.HUNGER, 20 * 15, 0)
+                    ),
+                    player ->
+                    {
+                        if(!player.level().getGameRules().getBoolean(ModGamerules.JOINT_CAUSES_DIZZY))
+                        {
+                            player.removeEffect(MobEffects.CONFUSION);
+                        }
+                        player.displayClientMessage(
+                                Component.literal("You feel mellowed out."),
+                                true
+                        );
+                    }
+            ));
+    public static final RegistryEntry<Item> BLUE_EDIBLE = ITEMS.register("blue_edible",
+            () -> new EffectItem(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(0)
+                            .saturationMod(0.0F)
+                            .alwaysEat()
+                            .build()),
+                    List.of(
+                            () -> new MobEffectInstance(MobEffects.CONFUSION, 20 * 20, 0),
+                            () -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 15, 0),
+                            () -> new MobEffectInstance(MobEffects.HUNGER, 20 * 15, 0)
+                    ),
+                    player ->
+                    {
+                        if(!player.level().getGameRules().getBoolean(ModGamerules.JOINT_CAUSES_DIZZY))
+                        {
+                            player.removeEffect(MobEffects.CONFUSION);
+                        }
+                        player.displayClientMessage(
+                                Component.literal("You feel mellowed out."),
+                                true
+                        );
                     }
             ));
 

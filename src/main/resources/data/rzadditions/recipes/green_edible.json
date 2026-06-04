@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:green_dye"
+    },
+    {
+      "amount": 125,
+      "fluid": "rzadditions:thc_oil",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "rzadditions:green_edible"
+    }
+  ]
+}

@@ -41,13 +41,23 @@ public class RZAdditions
                     GameRules.Category.PLAYER,
                     GameRules.BooleanValue.create(true)
             );
-            LOGGER.info("Registered gamerule: playJoinAndLeaveSounds");
+            RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            RZAdditions.LOGGER.info("=");
+            RZAdditions.LOGGER.info("= RZ's Additions " + ModReferences.VERSION);
+            RZAdditions.LOGGER.info("= Gamerule Registered: playJoinAndLeaveSounds ");
+            RZAdditions.LOGGER.info("=");
+            RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
             ModGamerules.JOINT_CAUSES_DIZZY = GameRules.register(
                     "jointsCauseNausea",
                     GameRules.Category.PLAYER,
                     GameRules.BooleanValue.create(true)
             );
-            LOGGER.info("Registered gamerule: jointsCauseNausea");
+            RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            RZAdditions.LOGGER.info("=");
+            RZAdditions.LOGGER.info("= RZ's Additions " + ModReferences.VERSION);
+            RZAdditions.LOGGER.info("= Gamerule Registered: jointsCauseNausea ");
+            RZAdditions.LOGGER.info("=");
+            RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         });
     }
 }

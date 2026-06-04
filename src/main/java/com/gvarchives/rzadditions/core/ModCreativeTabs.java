@@ -3,12 +3,10 @@ package com.gvarchives.rzadditions.core;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
-
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class ModCreativeTabs
 {
@@ -35,6 +33,9 @@ public class ModCreativeTabs
                                 output.accept(ModItems.HEMP.get());
                                 output.accept(ModItems.BLUNT.get());
                                 output.accept(ModItems.HASH.get());
+                                output.accept(ModItems.RED_EDIBLE.get());
+                                output.accept(ModItems.GREEN_EDIBLE.get());
+                                output.accept(ModItems.BLUE_EDIBLE.get());
 
                                 // Tools
                                 output.accept(ModItems.PAINT_SCRAPER.get());

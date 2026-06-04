@@ -1,6 +1,5 @@
 package com.gvarchives.rzadditions.events;
 
-import com.gvarchives.rzadditions.RZAdditions;
 import com.gvarchives.rzadditions.core.ModItems;
 import com.gvarchives.rzadditions.core.ModReferences;
 import com.gvarchives.rzadditions.core.ModVillagers;

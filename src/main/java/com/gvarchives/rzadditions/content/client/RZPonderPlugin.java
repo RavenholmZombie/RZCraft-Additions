@@ -13,7 +13,8 @@ public class RZPonderPlugin implements net.createmod.ponder.api.registration.Pon
     {
         RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         RZAdditions.LOGGER.info("=");
-        RZAdditions.LOGGER.info("= RZ's Additions Create Ponder Plugin Registered!");
+        RZAdditions.LOGGER.info("= RZ's Additions " + ModReferences.VERSION);
+        RZAdditions.LOGGER.info("= RZPonderPlugin() Ponder Plugin Registered. ");
         RZAdditions.LOGGER.info("=");
         RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
@@ -31,7 +32,8 @@ public class RZPonderPlugin implements net.createmod.ponder.api.registration.Pon
     {
         RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         RZAdditions.LOGGER.info("=");
-        RZAdditions.LOGGER.info("= Registering RZ Additions' Ponder Scenes");
+        RZAdditions.LOGGER.info("= RZ's Additions " + ModReferences.VERSION);
+        RZAdditions.LOGGER.info("= Registering Ponder Scenes");
         RZAdditions.LOGGER.info("=");
         RZAdditions.LOGGER.info("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
         helper.forComponents(
