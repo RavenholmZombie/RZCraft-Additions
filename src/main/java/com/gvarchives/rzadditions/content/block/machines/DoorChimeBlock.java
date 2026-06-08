@@ -14,6 +14,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,6 +23,9 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.PushReaction;
 
 public class DoorChimeBlock extends HorizontalDirectionalBlock implements IWrenchable
 {
@@ -37,6 +41,16 @@ public class DoorChimeBlock extends HorizontalDirectionalBlock implements IWrenc
                 .setValue(FACING, Direction.NORTH)
                 .setValue(POWERED, false));
 
+    }
+
+    private Direction getAttachedDirection(BlockState state)
+    {
+        return state.getValue(FACING).getOpposite();
+    }
+
+    private BlockPos getSupportPos(BlockPos pos, BlockState state)
+    {
+        return pos.relative(getAttachedDirection(state));
     }
 
     @Override
@@ -55,11 +69,57 @@ public class DoorChimeBlock extends HorizontalDirectionalBlock implements IWrenc
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        boolean powered = context.getLevel().hasNeighborSignal(context.getClickedPos());
+        Direction clickedFace = context.getClickedFace();
+
+        if (clickedFace.getAxis().isVertical())
+            return null;
+
+        Direction facing = clickedFace;
+
+        BlockPos pos = context.getClickedPos();
+        BlockPos supportPos = pos.relative(facing.getOpposite());
+
+        if (!context.getLevel().getBlockState(supportPos).isFaceSturdy(
+                context.getLevel(),
+                supportPos,
+                facing
+        ))
+            return null;
 
         return this.defaultBlockState()
-                .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(POWERED, powered);
+                .setValue(FACING, facing)
+                .setValue(POWERED, false);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
+    {
+        BlockPos supportPos = getSupportPos(pos, state);
+        Direction supportFace = state.getValue(FACING);
+
+        return level.getBlockState(supportPos).isFaceSturdy(level, supportPos, supportFace);
+    }
+
+    @Override
+    public BlockState updateShape(
+            BlockState state,
+            Direction direction,
+            BlockState neighborState,
+            LevelAccessor level,
+            BlockPos pos,
+            BlockPos neighborPos
+    )
+    {
+        if (direction == getAttachedDirection(state) && !state.canSurvive(level, pos))
+            return Blocks.AIR.defaultBlockState();
+
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    @Override
+    public PushReaction getPistonPushReaction(BlockState state)
+    {
+        return PushReaction.DESTROY;
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.gvarchives.rzadditions.content.block.machines;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.core.BlockPos;
@@ -26,6 +27,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.PushReaction;
 
 public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements IWrenchable
 {
@@ -46,6 +50,16 @@ public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements I
     private BlockPos getAttachedBlockPos(BlockPos pos)
     {
         return pos.below();
+    }
+
+    private Direction getAttachedDirection(BlockState state)
+    {
+        return state.getValue(FACING).getOpposite();
+    }
+
+    private BlockPos getSupportPos(BlockPos pos, BlockState state)
+    {
+        return pos.relative(getAttachedDirection(state));
     }
 
     @Override
@@ -72,11 +86,6 @@ public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements I
             level.setBlock(pos, newState, 3);
             updateDoorwayNeighbors(level, pos, state.getValue(FACING));
 
-            if(!level.isClientSide)
-            {
-                level.playSound(null, pos, SoundEvents.UI_BUTTON_CLICK.get(), SoundSource.BLOCKS, 1.0F, 3.0F);
-            }
-
             BlockPos attached = getAttachedBlockPos(pos);
             BlockPos belowAttached = attached.below();
 
@@ -89,6 +98,11 @@ public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements I
             level.updateNeighborsAt(pos.relative(state.getValue(FACING)).below(), this);
             level.updateNeighborsAt(pos.relative(state.getValue(FACING).getOpposite()), this);
             level.updateNeighborsAt(pos.relative(state.getValue(FACING).getOpposite()).below(), this);
+
+            if(!level.isClientSide)
+            {
+                level.playSound(null, pos, SoundEvents.UI_BUTTON_CLICK.get(), SoundSource.BLOCKS, 1.0F, 3.0F);
+            }
         }
 
         level.scheduleTick(pos, this, 5);
@@ -119,21 +133,33 @@ public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements I
 
     private boolean detectsPlayer(ServerLevel level, BlockPos pos, Direction facing)
     {
-        AABB frontBox = detectionBox(pos, facing);
-        AABB backBox = detectionBox(pos, facing.getOpposite());
+        AABB frontBox = frontDetectionBox(pos, facing);
+        AABB backBox = backDetectionBox(pos, facing);
 
         return !level.getEntitiesOfClass(Player.class, frontBox).isEmpty()
                 || !level.getEntitiesOfClass(Player.class, backBox).isEmpty();
     }
 
-    private AABB detectionBox(BlockPos pos, Direction dir)
+    private AABB frontDetectionBox(BlockPos pos, Direction dir)
     {
-        BlockPos first = pos.relative(dir);
-        BlockPos second = pos.relative(dir, 2);
+        return new AABB(pos)
+                .inflate(0.35D, 1.0D, 0.35D)
+                .move(
+                        dir.getStepX() * 0.05D,
+                        -1.0D,
+                        dir.getStepZ() * 0.05D
+                );
+    }
 
-        return new AABB(first).minmax(new AABB(second))
-                .inflate(0.35D, 1.5D, 0.35D)
-                .move(0, -1.5D, 0);
+    private AABB backDetectionBox(BlockPos pos, Direction dir)
+    {
+        return new AABB(pos)
+                .inflate(0.35D, 1.0D, 0.35D)
+                .move(
+                        -dir.getStepX() * 1D,
+                        -1.0D,
+                        -dir.getStepZ() * 1D
+                );
     }
 
     @Override
@@ -157,9 +183,57 @@ public class PlayerDetectorBlock extends HorizontalDirectionalBlock implements I
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context)
     {
+        Direction clickedFace = context.getClickedFace();
+
+        if (clickedFace.getAxis().isVertical())
+            return null;
+
+        Direction facing = clickedFace;
+
+        BlockPos pos = context.getClickedPos();
+        BlockPos supportPos = pos.relative(facing.getOpposite());
+
+        if (!context.getLevel().getBlockState(supportPos).isFaceSturdy(
+                context.getLevel(),
+                supportPos,
+                facing
+        ))
+            return null;
+
         return this.defaultBlockState()
-                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(FACING, facing)
                 .setValue(POWERED, false);
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
+    {
+        BlockPos supportPos = getSupportPos(pos, state);
+        Direction supportFace = state.getValue(FACING);
+
+        return level.getBlockState(supportPos).isFaceSturdy(level, supportPos, supportFace);
+    }
+
+    @Override
+    public BlockState updateShape(
+            BlockState state,
+            Direction direction,
+            BlockState neighborState,
+            LevelAccessor level,
+            BlockPos pos,
+            BlockPos neighborPos
+    )
+    {
+        if (direction == getAttachedDirection(state) && !state.canSurvive(level, pos))
+            return Blocks.AIR.defaultBlockState();
+
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    @Override
+    public PushReaction getPistonPushReaction(BlockState state)
+    {
+        return PushReaction.DESTROY;
     }
 
     @Override
