@@ -19,4 +19,6 @@ public class ModSounds
             SOUNDS.register("player_leave", () -> SoundEvent.createVariableRangeEvent(fromNamespaceAndPath(ModReferences.MOD_ID, "player_leave")));
     public static final RegistryObject<SoundEvent> DUCK =
             SOUNDS.register("duck", () -> SoundEvent.createVariableRangeEvent(fromNamespaceAndPath(ModReferences.MOD_ID, "duck")));
+    public static final RegistryObject<SoundEvent> CHIME =
+            SOUNDS.register("chime", () -> SoundEvent.createVariableRangeEvent(fromNamespaceAndPath(ModReferences.MOD_ID, "chime")));
 }

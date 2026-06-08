@@ -258,4 +258,12 @@ public class ModItems
     public static final RegistryEntry<Item> RED_SHEETMETAL_BLOCK = ITEMS.register("red_sheetmetal", () -> new BlockItem(ModBlocks.RED_SHEETMETAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryEntry<Item> BLACK_SHEETMETAL_BLOCK = ITEMS.register("black_sheetmetal", () -> new BlockItem(ModBlocks.BLACK_SHEETMETAL_BLOCK.get(), new Item.Properties()));
     public static final RegistryEntry<Item> BLUE_SHEETMETAL_BLOCK = ITEMS.register("blue_sheetmetal", () -> new BlockItem(ModBlocks.BLUE_SHEETMETAL_BLOCK.get(), new Item.Properties()));
+
+    // Player Sensor ItemBlock
+    public static final RegistryEntry<Item> PLAYER_DETECTOR = ITEMS.register("player_detector",
+            () -> new BlockItem(ModBlocks.PLAYER_DETECTOR.get(), new Item.Properties()));
+
+    // Door Chime ItemBlock
+    public static final RegistryEntry<Item> DOOR_CHIME = ITEMS.register("speaker",
+            () -> new BlockItem(ModBlocks.DOOR_CHIME.get(), new Item.Properties()));
 }

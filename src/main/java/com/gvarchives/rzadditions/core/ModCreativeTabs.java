@@ -39,6 +39,8 @@ public class ModCreativeTabs
 
                                 // Tools
                                 output.accept(ModItems.PAINT_SCRAPER.get());
+                                output.accept(ModItems.PLAYER_DETECTOR.get());
+                                output.accept(ModItems.DOOR_CHIME.get());
 
                                 // Fun
                                 output.accept(ModItems.RUBBER_DUCK.get());

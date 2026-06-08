@@ -3,6 +3,8 @@ package com.gvarchives.rzadditions.core;
 import com.gvarchives.rzadditions.content.block.crops.HempCropBlock;
 import com.gvarchives.rzadditions.content.block.crops.SoybeanCropBlock;
 import com.gvarchives.rzadditions.content.block.decor.ColoredSheetmetalBlock;
+import com.gvarchives.rzadditions.content.block.machines.DoorChimeBlock;
+import com.gvarchives.rzadditions.content.block.machines.PlayerDetectorBlock;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -51,4 +53,22 @@ public class ModBlocks
     public static final RegistryEntry<Block> RED_SHEETMETAL_BLOCK = BLOCKS.register("red_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.RED));
     public static final RegistryEntry<Block> BLACK_SHEETMETAL_BLOCK = BLOCKS.register("black_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLACK));
     public static final RegistryEntry<Block> BLUE_SHEETMETAL_BLOCK = BLOCKS.register("blue_sheetmetal", () -> new ColoredSheetmetalBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), DyeColor.BLUE));
+
+    // Player Sensor
+    public static final RegistryEntry<Block> PLAYER_DETECTOR = BLOCKS.register("player_detector",
+            () -> new PlayerDetectorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .strength(2.0F)
+                    .noCollission()
+                    .noOcclusion()
+                    .isViewBlocking((state, level, pos) -> false)
+                    .requiresCorrectToolForDrops()));
+
+    // Door Chime
+    public static final RegistryEntry<Block> DOOR_CHIME = BLOCKS.register("speaker",
+            () -> new DoorChimeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .strength(2.0F)
+                    .noCollission()
+                    .noOcclusion()
+                    .isViewBlocking((state, level, pos) -> false)
+                    .requiresCorrectToolForDrops()));
 }

@@ -13,5 +13,10 @@
     "sounds": [
       { "name": "rzadditions:duck" }
     ]
+  },
+  "chime": {
+    "sounds": [
+      { "name": "rzadditions:door_chime" }
+    ]
   }
 }
