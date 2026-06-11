@@ -1,9 +1,6 @@
 package com.gvarchives.rzadditions.core;
 
-import com.gvarchives.rzadditions.content.item.EffectItem;
-import com.gvarchives.rzadditions.content.item.PaintScraper;
-import com.gvarchives.rzadditions.content.item.RubberDuck;
-import com.gvarchives.rzadditions.content.item.SmokableItem;
+import com.gvarchives.rzadditions.content.item.*;
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
@@ -261,9 +258,17 @@ public class ModItems
 
     // Player Sensor ItemBlock
     public static final RegistryEntry<Item> PLAYER_DETECTOR = ITEMS.register("player_detector",
-            () -> new BlockItem(ModBlocks.PLAYER_DETECTOR.get(), new Item.Properties()));
+            () -> new TooltipBlockItem(
+                    ModBlocks.PLAYER_DETECTOR.get(),
+                    new Item.Properties(),
+                    "tooltip.rzadditions.player_detector"
+            ));
 
     // Door Chime ItemBlock
     public static final RegistryEntry<Item> DOOR_CHIME = ITEMS.register("speaker",
-            () -> new BlockItem(ModBlocks.DOOR_CHIME.get(), new Item.Properties()));
+            () -> new TooltipBlockItem(
+                    ModBlocks.DOOR_CHIME.get(),
+                    new Item.Properties(),
+                    "tooltip.rzadditions.speaker"
+            ));
 }

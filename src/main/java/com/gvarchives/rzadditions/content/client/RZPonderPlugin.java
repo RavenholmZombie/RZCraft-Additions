@@ -6,6 +6,7 @@ import com.gvarchives.rzadditions.core.ModBlocks;
 import com.gvarchives.rzadditions.core.ModReferences;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.resources.ResourceLocation;
+import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
 public class RZPonderPlugin implements net.createmod.ponder.api.registration.PonderPlugin
 {
@@ -54,7 +55,7 @@ public class RZPonderPlugin implements net.createmod.ponder.api.registration.Pon
                 ModBlocks.MAGENTA_SHEETMETAL_BLOCK.getId(),
                 ModBlocks.PINK_SHEETMETAL_BLOCK.getId()
         ).addStoryBoard(
-                new ResourceLocation(ModReferences.MOD_ID, "sheetmetal_dyeing"),
+                fromNamespaceAndPath(ModReferences.MOD_ID, "sheetmetal_dyeing"),
                 SheetmetalPonderScenes::dyeing
         );
     }

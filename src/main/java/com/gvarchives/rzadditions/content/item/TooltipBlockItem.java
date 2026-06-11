@@ -2,29 +2,23 @@ package com.gvarchives.rzadditions.content.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Block;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class PaintScraper extends Item
+public class TooltipBlockItem extends BlockItem
 {
-    public PaintScraper(Properties properties)
+    private final String tooltipKey;
+    public TooltipBlockItem(Block block, Properties properties, String tooltipKey)
     {
-        super(properties);
-    }
-
-    @Override
-    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player)
-    {
-        return false;
+        super(block, properties);
+        this.tooltipKey = tooltipKey;
     }
 
     @Override
@@ -32,7 +26,7 @@ public class PaintScraper extends Item
     {
         if (Screen.hasShiftDown())
         {
-            tooltip.add(Component.translatable("tooltip.rzadditions.scraper").withStyle(ChatFormatting.WHITE,  ChatFormatting.ITALIC));
+            tooltip.add(Component.translatable(tooltipKey).withStyle(ChatFormatting.WHITE,  ChatFormatting.ITALIC));
         }
         else
         {
